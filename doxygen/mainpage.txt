@@ -1,0 +1,76 @@
+/*! \mainpage Introduction, installation, and running examples
+ *
+ * \section intro_sec Introduction
+ *
+ * An off-line implementation of object instance segmentation and classification using Mask-RCNN and SLAM.\n 
+ * It is based on ORBSLAM2 and is using its Map, MapPoint, and KeyFrame classes.
+ *
+ * \section install_sec Installation
+ * Installation steps:
+ * - Verify that your GPU works (I used CUDA9.0 and CuDNN 7.0.5):
+ *    -# Run nvidia-smi in terminal
+ *    -# Run a CUDA sample ./deviceQuery and make sure it shows Test Passed.
+ * - Install PyTorch (using Python 3.5.2 and gcc/g++ 5.4.0):
+ *    -# sudo apt install python3-pip cython3
+ *    -# pip3 install numpy
+ *    -# pip3 install matplotlib==1.5.1
+ *    -# pip3 install torch_nightly -f https://download.pytorch.org/whl/nightly/cu90/torch_nightly.html
+ *    -# pip3 install torchvision
+ * - Install Eigen, gflags, glog, googletest:
+ * - Install OpenGL: sudo apt-get install freeglut3 freeglut3-dev binutils-gold libglew-dev mesa-common-dev build-essential libglew1.5-dev libglm-dev
+ * - Install OpenCV (3.3.1)
+ *    -# sudo apt install libgtk2.0-dev
+ *    -# mkdir opencv_build
+ *    -# cd opencv_build
+ *    -# cmake -D CMAKE_BUILD_TYPE=RELEASE
+ *      -D CMAKE_INSTALL_PREFIX=/usr/local
+ *      WITH_CUDA=ON
+ *      ENABLE_FAST_MATH=1
+ *      CUDA_FAST_MATH=1
+ *      WITH_CUBLAS=1
+ *      INSTALL_PYTHON_EXAMPLES=ON
+ *      INSTALL_C_EXAMPLES=OFF
+ *      OPENCV_EXTRA_MODULES_PATH=../opencv_contrib/modules
+ *      WITH_GTK=ON
+ *      ENABLE_PRECOMPILED_HEADERS=OFF
+ *      BUILD_EXAMPLES=ON
+ *      BUILD_TIFF=ON
+ *      ../opencv/
+ *    -# ccmake ../opencv/
+ *    -# make -j4
+ *    -# sudo make install
+ *    -# sudo ldconfig
+ * - Install Pangolin
+ *    -# sudo apt install doxygen graphviz doxygen-gui
+ *    -# Download Pangolin
+ *    -# cd Pangolin
+ *    -# mkdir build
+ *    -# cd build
+ *    -# cmake ..
+ *    -# sudo make install
+ * - Build Mask-RCNN SLAM (also includes building pycocotools, apex, maskrcnn-benchmark, and ORBSLAM2)
+ *    -# cd maskrcnn_slam_b
+ *    -# ./build.sh
+ * - Verify all good:
+ *    -# Environment: Run ./test_environment \n
+ *       Expected output:
+ *       Active GPU 0: GeForce 930M
+ *       With Internet Connection
+ *       Environmental variables included: 
+ *        + Found CUDA 9.0/bin
+ *        + Found CUDA 9.0/lib64
+ *        + Found cuDNN 7.0.5/lib64
+ *        + Found gcc 5.4.0
+ *        + Found g++ 5.4.0
+ *        + Found opencv 3.3.1
+ *        - Found Python 3.5.2 \n
+ *                 matplotlib 1.5.1 \n
+ *                 numpy 1.11.0 \n
+ *                 pillow 6.1.0 \n
+ *                 torch 1.1.0 \n
+ *                 torchvision 0.3.0 \n
+ *                 cv2 3.3.1-dev \n
+ *    -# Engine: Run ./test_engine in tests
+ *
+ * \section examples_sec Run Examples
+ */

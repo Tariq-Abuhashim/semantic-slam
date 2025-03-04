@@ -1,0 +1,61 @@
+\hypertarget{classDoN}{}\section{DoN Class Reference}
+\label{classDoN}\index{DoN@{DoN}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDoN_a65b2219f2c0aa71596cf50608b1bb827}\label{classDoN_a65b2219f2c0aa71596cf50608b1bb827}} 
+\hyperlink{classDoN_a65b2219f2c0aa71596cf50608b1bb827}{DoN} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDoN_a9c5679670e784bddfca231c63122bce7}\label{classDoN_a9c5679670e784bddfca231c63122bce7}} 
+\hyperlink{classDoN_a9c5679670e784bddfca231c63122bce7}{DoN} (double scale1, double scale2, double threshold, double segradius)
+\begin{DoxyCompactList}\small\item\em Constructor with inputs. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDoN_a8583a85e01c683f503decb1a8a757682}\label{classDoN_a8583a85e01c683f503decb1a8a757682}} 
+\hyperlink{classDoN_a8583a85e01c683f503decb1a8a757682}{DoN} (double scale1, double scale2, double threshold, double segradius, cv\+::\+Mat K, int im\+Width, int im\+Height, int)
+\begin{DoxyCompactList}\small\item\em Constructor with more image inputs. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDoN_a4544ca7d9278dffa111202464c005aad}\label{classDoN_a4544ca7d9278dffa111202464c005aad}} 
+\hyperlink{classDoN_a4544ca7d9278dffa111202464c005aad}{$\sim$\+DoN} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+std\+::map$<$ int, std\+::vector$<$ cv\+::\+Point $>$ $>$ \hyperlink{classDoN_ae1e63b9178dad44c2ced58bd571253cd}{extract} (cv\+::\+Mat \&im\+R\+GB, cv\+::\+Mat \&imD)
+\begin{DoxyCompactList}\small\item\em The main function to cluster the depth data. \end{DoxyCompactList}\item 
+void \hyperlink{classDoN_ad64458603d62f8a04298520cb747b90e}{extract} (pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+ZI $>$\+::Ptr cloud)
+\item 
+\mbox{\Hypertarget{classDoN_aa0cffa1275c78488726dab2635265c05}\label{classDoN_aa0cffa1275c78488726dab2635265c05}} 
+std\+::map$<$ int, std\+::vector$<$ cv\+::\+Point $>$ $>$ \hyperlink{classDoN_aa0cffa1275c78488726dab2635265c05}{Get\+Clusters} ()
+\begin{DoxyCompactList}\small\item\em Obselete function\+: returns a vector of clusters in image coordinates. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDoN_a32f62241f82a021cbf44cefaee8f800d}\label{classDoN_a32f62241f82a021cbf44cefaee8f800d}} 
+void \hyperlink{classDoN_a32f62241f82a021cbf44cefaee8f800d}{show2d} (cv\+::\+Mat \&im\+R\+GB)
+\begin{DoxyCompactList}\small\item\em 2D visualisation function, which requires and input image to display clusters on. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDoN_a1d5a069af68c05bc2b525d42b8b9e94a}\label{classDoN_a1d5a069af68c05bc2b525d42b8b9e94a}} 
+void \hyperlink{classDoN_a1d5a069af68c05bc2b525d42b8b9e94a}{show3d} ()
+\begin{DoxyCompactList}\small\item\em 3D visualisation function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDoN_a704e464039afd6d573c11ca57fc800be}\label{classDoN_a704e464039afd6d573c11ca57fc800be}} 
+pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+Normal $>$\+::Ptr {\bfseries Get\+Don\+Cloud} ()
+\item 
+\mbox{\Hypertarget{classDoN_a79aa2357440c81f36cf99902cf24e47e}\label{classDoN_a79aa2357440c81f36cf99902cf24e47e}} 
+std\+::vector$<$ pcl\+::\+Point\+Indices $>$ {\bfseries Get\+Clusters\+Indices} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classDoN_ae1e63b9178dad44c2ced58bd571253cd}\label{classDoN_ae1e63b9178dad44c2ced58bd571253cd}} 
+\index{DoN@{DoN}!extract@{extract}}
+\index{extract@{extract}!DoN@{DoN}}
+\subsubsection{\texorpdfstring{extract()}{extract()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::map$<$ int, std\+::vector$<$ cv\+::\+Point $>$ $>$ Do\+N\+::extract (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{im\+R\+GB,  }\item[{cv\+::\+Mat \&}]{imD }\end{DoxyParamCaption})}
+
+
+
+The main function to cluster the depth data. 
+
+N\+O\+TE\+: setting viewpoint is very important, so that we can ensure normals are all pointed in the same direction!\mbox{\Hypertarget{classDoN_ad64458603d62f8a04298520cb747b90e}\label{classDoN_ad64458603d62f8a04298520cb747b90e}} 
+\index{DoN@{DoN}!extract@{extract}}
+\index{extract@{extract}!DoN@{DoN}}
+\subsubsection{\texorpdfstring{extract()}{extract()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Do\+N\+::extract (\begin{DoxyParamCaption}\item[{pcl\+::\+Point\+Cloud$<$ pcl\+::\+Point\+X\+Y\+ZI $>$\+::Ptr}]{cloud }\end{DoxyParamCaption})}
+
+N\+O\+TE\+: setting viewpoint is very important, so that we can ensure normals are all pointed in the same direction!
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mrt/\+Dev/maskrcnn\+\_\+slam\+\_\+b/include/Do\+N.\+hpp\item 
+/home/mrt/\+Dev/maskrcnn\+\_\+slam\+\_\+b/src/Do\+N.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,93 @@
+
+#
+#
+# Tariq Abuhashim
+# t.abuhashim@gmail.com
+# July, 2019
+#
+#
+
+"""Performs testing of python-C++ bindings on a single image
+"""
+#import os
+#MASK_RCNN_DIR = "@MASKRCNN_DIR@"
+#MASK_RCNN_BENCHMARK_DIR = "@MASKRCNN_BENCHMARK_DIR@"
+
+import cv2
+import torch
+import numpy
+
+import sys
+sys.path.append("@MASKRCNN_BENCHMARK_DIR@/demo")
+
+from maskrcnn_benchmark.config import cfg
+from predictor import COCODemo
+
+config_file = "@MASKRCNN_BENCHMARK_DIR@/configs/caffe2/e2e_mask_rcnn_R_50_FPN_1x_caffe2.yaml"
+cfg.merge_from_file(config_file)
+#cfg.merge_from_list(["MODEL.DEVICE", "cpu"])
+coco_demo = COCODemo(cfg, min_image_size=800, confidence_threshold=0.8)
+
+# Global variables (used to communicate with c++)
+labels = None
+boxes = None
+masks = None
+#result = None
+scores = None
+
+#print(" -- PYTHON: object initialised successfully ")
+
+def predict(image):
+
+    global coco_demo
+    global labels
+    global boxes
+    global masks
+    #global result
+    global scores
+
+    ### load image and then run prediction
+    #print(" -- PYTHON: running prediction ")
+    predictions = coco_demo.compute_prediction(image)
+    top_predictions = coco_demo.select_top_predictions(predictions)
+
+    ### re-select top predictions (can be a tighter criterion compared to the previous one above
+    scores = top_predictions.get_field("scores")
+    keep = torch.nonzero(scores > 0.8).squeeze(1)
+    top_predictions = top_predictions[keep]
+    scores = top_predictions.get_field("scores")
+    _, idx = scores.sort(0, descending=True)
+    top_predictions = top_predictions[idx]
+
+    ### get predictions
+    #print(" -- PYTHON: getting labels, boxes, and masks")
+    labels = top_predictions.get_field("labels").tolist()
+    boxes = top_predictions.bbox.tolist()
+    masks = top_predictions.get_field("mask").numpy()
+    scores = top_predictions.get_field("scores").tolist()
+
+    ### result
+    #result = image.copy()
+    #if coco_demo.show_mask_heatmaps:
+    #result = coco_demo.create_mask_montage(result, top_predictions)
+    #else:
+    #   result = coco_demo.overlay_boxes(result, top_predictions)
+    #if coco_demo.cfg.MODEL.MASK_ON:
+    #   result = coco_demo.overlay_mask(result, top_predictions)
+    #if coco_demo.cfg.MODEL.KEYPOINT_ON:
+    #   result = coco_demo.overlay_keypoints(result, top_predictions)
+    #result = coco_demo.overlay_class_names(result, top_predictions)
+    #result = result.astype(numpy.uint16)
+
+    ### produce a composite of all masks
+    #height, width = masks.shape[-2:] # masks has shape (num_detections, 1, height, width)
+    #result = numpy.zeros( [height, width], dtype=numpy.uint8 )
+    #for mask in masks: # mask has shape (1, height, width)
+    #    mask = mask[0,:].astype(numpy.uint8);
+    #    result = result + mask # doesnt work well, masks intersections sum up to 2.
+
+    ### write result
+    #cv2.imwrite("result.png",result)
+
+    ### done
+    #print(" -- PYTHON: done ")

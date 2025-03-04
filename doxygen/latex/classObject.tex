@@ -1,0 +1,511 @@
+\hypertarget{classObject}{}\section{Object Class Reference}
+\label{classObject}\index{Object@{Object}}
+
+
+A definition of an object in the inventory.  
+
+
+
+
+{\ttfamily \#include $<$Object.\+hpp$>$}
+
+
+
+Collaboration diagram for Object\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=125pt]{classObject__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classObject_a8710a1b07956b7eadc6b05563fbb6016}{Object} (Key\+Frame $\ast$p\+KF, cv\+::\+Rect Box, cv\+::\+Mat imD, cv\+::\+Mat K, int Sensor)
+\item 
+\hyperlink{classObject_ae8f5483f459e46687bd01e6f9977afd3}{$\sim$\+Object} ()
+\item 
+\mbox{\Hypertarget{classObject_a84c579c83ad0e713014dd9b2a4bf1d81}\label{classObject_a84c579c83ad0e713014dd9b2a4bf1d81}} 
+void {\bfseries Set\+Object\+Params} (float Prob\+Thd, float Min\+Object\+Points, int Height, int Width, float Min\+Depth, float Max\+Depth, float Dist, float Res)
+\item 
+void \hyperlink{classObject_a6661c15e096fc5ec5b6eba0eda114ac8}{Add\+Key\+Frame} (Key\+Frame $\ast$p\+KF)
+\item 
+void \hyperlink{classObject_a0272ba2a458346ce9e53fa0fba7799bd}{Add\+Object\+Point} (\hyperlink{classObjectPoint}{Object\+Point} $\ast$p\+MP)
+\item 
+vector$<$ Key\+Frame $\ast$ $>$ \hyperlink{classObject_ad2535d39e437bf0ea9ff663dbfd3b7d0}{Get\+All\+Key\+Frames} ()
+\item 
+vector$<$ \hyperlink{classObjectPoint}{Object\+Point} $\ast$ $>$ \hyperlink{classObject_a53b5db01428c4bcf2b54c27b0074257f}{Get\+All\+Object\+Points} ()
+\item 
+Key\+Frame $\ast$ \hyperlink{classObject_a3513873d737b0557c12c47c19ae2c291}{Get\+Reference\+Key\+Frame} ()
+\item 
+map$<$ Key\+Frame $\ast$, size\+\_\+t $>$ \hyperlink{classObject_ab17d7f60abbec82a3b45fdf322ea472e}{Get\+Observations} ()
+\item 
+int \hyperlink{classObject_a3b40498cabe036689eff2862e1fd8143}{Observations} ()
+\item 
+void \hyperlink{classObject_a1e7dbe097a891bee611dd36d64b5de64}{Add\+Observation} (Key\+Frame $\ast$p\+KF, size\+\_\+t idx)
+\item 
+void \hyperlink{classObject_a2f6308e77b95e3302a2f60c838839a20}{Erase\+Observation} (Key\+Frame $\ast$p\+KF)
+\item 
+void \hyperlink{classObject_ad585053a0c8b020a262c75fbd8c9d428}{Add\+Contour} (const Contour \&cnt)
+\item 
+Contour \hyperlink{classObject_a0e1e343172b51146a8e1af92ba2938d1}{Get\+Contour} (size\+\_\+t idx)
+\item 
+Contour \hyperlink{classObject_a8295fd33f9ebe850dbfef7b1f70f326d}{Get\+Contour} (Key\+Frame $\ast$KF)
+\item 
+size\+\_\+t \hyperlink{classObject_a211d9a8ea1cfbc9a3bc766b76e5d41be}{Get\+Number\+Of\+Contours} ()
+\item 
+void \hyperlink{classObject_a93f6229c59ae6f435b0a31ee285740ae}{Add\+Bounding\+Box} (const cv\+::\+Rect \&box)
+\item 
+void \hyperlink{classObject_ad680f6b7841320d67f6caf8813dc7aeb}{Set\+Label} (const std\+::string \&label)
+\item 
+string \hyperlink{classObject_ab60f1df2e7bd47cdfb77a529d5ad6c69}{Get\+Label} ()
+\item 
+void \hyperlink{classObject_a92f56ff635e752ffa2674596c8f7c1ae}{Update\+Score} (const double score)
+\item 
+double \hyperlink{classObject_a440178c130d1b50d232d9b96510e45a6}{Get\+Score} ()
+\item 
+bool \hyperlink{classObject_a38c47e88eb887dc62031e1c817e5fead}{Is\+In\+Object} (\hyperlink{classObjectPoint}{Object\+Point} $\ast$MP)
+\item 
+bool \hyperlink{classObject_ad4cb82b18bd457d631cb79cec0db98ac}{Has\+Enough\+Object\+Points} ()
+\item 
+int \hyperlink{classObject_a9fbecce492d60540c9d3fa2f81773552}{Get\+Max\+Observations} ()
+\item 
+cv\+::\+Point \hyperlink{classObject_a38bd011f1b615252420ae2e89d786205}{Project\+Object\+Point} (\hyperlink{classObjectPoint}{Object\+Point} $\ast$MP, Key\+Frame $\ast$KF)
+\item 
+void \hyperlink{classObject_a419bf8497ede00f30dd9ebacaac18987}{Add\+New\+Object\+Points} (Contour mask\+Contour, const cv\+::\+Mat \&im\+Depth, Key\+Frame $\ast$KF, float score)
+\item 
+\mbox{\Hypertarget{classObject_a221ae11d61c3ef7a7f80bde2f8d9290a}\label{classObject_a221ae11d61c3ef7a7f80bde2f8d9290a}} 
+void {\bfseries Add\+New\+Object\+Points} (Contour mask\+Contour, const std\+::vector$<$ std\+::vector$<$ cv\+::\+Point $>$ $>$ \&clusters, const cv\+::\+Mat \&im\+Depth, Key\+Frame $\ast$KF, float score)
+\item 
+\mbox{\Hypertarget{classObject_a531db2d7eb149102750890f7aab97de2}\label{classObject_a531db2d7eb149102750890f7aab97de2}} 
+void {\bfseries Add\+Segment} (Contour mask\+Contour, const cv\+::\+Mat \&im\+Depth, Key\+Frame $\ast$KF, float score)
+\item 
+\mbox{\Hypertarget{classObject_ac6b4a93f2ab97692c70c5c54ecc1628e}\label{classObject_ac6b4a93f2ab97692c70c5c54ecc1628e}} 
+void {\bfseries Add\+Segment} (const std\+::vector$<$ cv\+::\+Point $>$ \&cluster, const cv\+::\+Mat \&im\+Depth, Key\+Frame $\ast$KF, float score)
+\item 
+void \hyperlink{classObject_a3f843dde478cc5150746d4bc3a8399f8}{Check\+Object\+Points} (Key\+Frame $\ast$K\+F2)
+\item 
+void \hyperlink{classObject_a438ac9db297561c832a416b304e40e87}{Integrate} (cv\+::\+Mat im\+R\+GB, cv\+::\+Mat imD, cv\+::\+Mat T)
+\item 
+void \hyperlink{classObject_a2994e04dbefd498087ad3f5a0ed41057}{Set\+Bad\+Flag} ()
+\item 
+bool \hyperlink{classObject_a3125138275bf5ab9ea78073b18a4f7c7}{is\+Bad} ()
+\item 
+\mbox{\Hypertarget{classObject_a8ef91a15b2f4de4f4ccaeb2020ff2ae0}\label{classObject_a8ef91a15b2f4de4f4ccaeb2020ff2ae0}} 
+std\+::vector$<$ cv\+::\+Point $>$ {\bfseries Get2d\+Features} (Key\+Frame $\ast$KF, const cv\+::\+Mat \&im\+Depth)
+\item 
+\mbox{\Hypertarget{classObject_a0c56ad377cdad098ae40b9d6117bda7b}\label{classObject_a0c56ad377cdad098ae40b9d6117bda7b}} 
+void {\bfseries Save\+To\+File} (const std\+::string \&ext)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classObject_aae2511e9146551564784a5841e104aac}{l\+Id} (\hyperlink{classObject}{Object} $\ast$p\+M\+O1, \hyperlink{classObject}{Object} $\ast$p\+M\+O2)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classObject_ab70072eb97a2eb29253c2fd3f329fd29}\label{classObject_ab70072eb97a2eb29253c2fd3f329fd29}} 
+long unsigned int \hyperlink{classObject_ab70072eb97a2eb29253c2fd3f329fd29}{mn\+Id}
+\begin{DoxyCompactList}\small\item\em Current \hyperlink{classObject}{Object} Id. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classObject_ab066f4ba169bd2879bcb8eddcb8b3d66}\label{classObject_ab066f4ba169bd2879bcb8eddcb8b3d66}} 
+int \hyperlink{classObject_ab066f4ba169bd2879bcb8eddcb8b3d66}{n\+Obs}
+\begin{DoxyCompactList}\small\item\em number of Countours in the object \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classObject_aa7c1b54a6cbaa078bc42d2bfd8cd3ab4}\label{classObject_aa7c1b54a6cbaa078bc42d2bfd8cd3ab4}} 
+int \hyperlink{classObject_aa7c1b54a6cbaa078bc42d2bfd8cd3ab4}{mn\+Tracks}
+\begin{DoxyCompactList}\small\item\em number of Object\+Points in the object \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classObject_a44e0ae2123a49d8cabbdb5899a26ab33}\label{classObject_a44e0ae2123a49d8cabbdb5899a26ab33}} 
+float {\bfseries m\+Red}
+\item 
+\mbox{\Hypertarget{classObject_a4ebfd930ce71fb5b17fa2f2c2be8addb}\label{classObject_a4ebfd930ce71fb5b17fa2f2c2be8addb}} 
+float {\bfseries m\+Green}
+\item 
+\mbox{\Hypertarget{classObject_a3d953a4509afe458053efc9d46cc5a9f}\label{classObject_a3d953a4509afe458053efc9d46cc5a9f}} 
+float {\bfseries m\+Blue}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classObject_a3d8629d7d3aaeb68de1a5582260d7537}\label{classObject_a3d8629d7d3aaeb68de1a5582260d7537}} 
+static long unsigned int \hyperlink{classObject_a3d8629d7d3aaeb68de1a5582260d7537}{n\+Next\+Id} =0
+\begin{DoxyCompactList}\small\item\em Next \hyperlink{classObject}{Object} Id. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classObject_a6510cecb692aac1ac052cd35c01fb033}\label{classObject_a6510cecb692aac1ac052cd35c01fb033}} 
+float {\bfseries Random\+Float} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classObject_a76ab01f0e8d22cd32a6562a00495c59b}\label{classObject_a76ab01f0e8d22cd32a6562a00495c59b}} 
+std\+::set$<$ Key\+Frame $\ast$ $>$ \hyperlink{classObject_a76ab01f0e8d22cd32a6562a00495c59b}{msp\+Key\+Frames}
+\begin{DoxyCompactList}\small\item\em A pointer to protected set of Key\+Frame seeing this object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classObject_a068c5f6a016148e715eca6c4e05d42c6}\label{classObject_a068c5f6a016148e715eca6c4e05d42c6}} 
+std\+::set$<$ \hyperlink{classObjectPoint}{Object\+Point} $\ast$ $>$ \hyperlink{classObject_a068c5f6a016148e715eca6c4e05d42c6}{msp\+Object\+Points}
+\begin{DoxyCompactList}\small\item\em A pointer to protected set of \hyperlink{classObjectPoint}{Object\+Point} belonging to this object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classObject_a09d584c9e2f1be37fbffd0983c048d37}\label{classObject_a09d584c9e2f1be37fbffd0983c048d37}} 
+Key\+Frame $\ast$ \hyperlink{classObject_a09d584c9e2f1be37fbffd0983c048d37}{mp\+Ref\+KF}
+\begin{DoxyCompactList}\small\item\em Reference Key\+Frame. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classObject_a066e5319421d737297fc3983741c689f}\label{classObject_a066e5319421d737297fc3983741c689f}} 
+std\+::vector$<$ Contour $>$ \hyperlink{classObject_a066e5319421d737297fc3983741c689f}{mvp\+Contours}
+\begin{DoxyCompactList}\small\item\em A vector of protected object contours. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classObject_a36f268ec71e51829dd08acde6e7870fa}\label{classObject_a36f268ec71e51829dd08acde6e7870fa}} 
+std\+::vector$<$ cv\+::\+Rect $>$ \hyperlink{classObject_a36f268ec71e51829dd08acde6e7870fa}{mvp\+Bounding\+Boxes}
+\begin{DoxyCompactList}\small\item\em A vector of protected object bounding boxes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classObject_ac908f68b5c3b6dcd4b85e4c104d8da1e}\label{classObject_ac908f68b5c3b6dcd4b85e4c104d8da1e}} 
+std\+::vector$<$ std\+::vector$<$ cv\+::\+Point $>$ $>$ \hyperlink{classObject_ac908f68b5c3b6dcd4b85e4c104d8da1e}{mvp\+Segments}
+\begin{DoxyCompactList}\small\item\em A vector of protected object segments. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classObject_ae4d7dda62f7f9c2de88dc033237a33a9}\label{classObject_ae4d7dda62f7f9c2de88dc033237a33a9}} 
+std\+::string \hyperlink{classObject_ae4d7dda62f7f9c2de88dc033237a33a9}{ms\+Label}
+\begin{DoxyCompactList}\small\item\em An object label (string) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classObject_a52bd65e542dc41796db6724b4611f8dd}\label{classObject_a52bd65e542dc41796db6724b4611f8dd}} 
+double \hyperlink{classObject_a52bd65e542dc41796db6724b4611f8dd}{mn\+Score}
+\begin{DoxyCompactList}\small\item\em An object classification score (double) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classObject_a29e81947a25883b9e7fdb3f5c4a84076}\label{classObject_a29e81947a25883b9e7fdb3f5c4a84076}} 
+std\+::map$<$ Key\+Frame $\ast$, size\+\_\+t $>$ \hyperlink{classObject_a29e81947a25883b9e7fdb3f5c4a84076}{m\+Observations}
+\begin{DoxyCompactList}\small\item\em Keyframes observing the contour and associated index in keyframe-\/$>$mvp\+Contours. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classObject_a8c4672ce0a21fe301c5f11419bda84d0}\label{classObject_a8c4672ce0a21fe301c5f11419bda84d0}} 
+bool \hyperlink{classObject_a8c4672ce0a21fe301c5f11419bda84d0}{mb\+Bad}
+\begin{DoxyCompactList}\small\item\em Bad flag (we do not currently erase \hyperlink{classObjectPoint}{Object\+Point} from memory) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classObject_a4cc6b61d250e200e2ec5eeccc1745b79}\label{classObject_a4cc6b61d250e200e2ec5eeccc1745b79}} 
+size\+\_\+t \hyperlink{classObject_a4cc6b61d250e200e2ec5eeccc1745b79}{md\+Min\+Points\+Count}
+\begin{DoxyCompactList}\small\item\em Minimum number of \hyperlink{classObjectPoint}{Object\+Point} an object should allowed to have inorder to be included into the inventory. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classObject_af7eada6b6f8f5c6d7c52ba96f9c6b0d2}\label{classObject_af7eada6b6f8f5c6d7c52ba96f9c6b0d2}} 
+\hyperlink{classTSDF}{T\+S\+DF} $\ast$ \hyperlink{classObject_af7eada6b6f8f5c6d7c52ba96f9c6b0d2}{tsdf}
+\begin{DoxyCompactList}\small\item\em A pointer to an object \hyperlink{classTSDF}{T\+S\+DF}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classObject_a6d8dfe87d2bbcb734681939b0c54aa86}\label{classObject_a6d8dfe87d2bbcb734681939b0c54aa86}} 
+int \hyperlink{classObject_a6d8dfe87d2bbcb734681939b0c54aa86}{mn\+Height}
+\begin{DoxyCompactList}\small\item\em An object depth image heights. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classObject_a32d2930a06f611ed2a7cbff167736eeb}\label{classObject_a32d2930a06f611ed2a7cbff167736eeb}} 
+int \hyperlink{classObject_a32d2930a06f611ed2a7cbff167736eeb}{mn\+Width}
+\begin{DoxyCompactList}\small\item\em An object depth image width. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classObject_a98a79df663772f156d9dcb10f5de3dfe}\label{classObject_a98a79df663772f156d9dcb10f5de3dfe}} 
+float \hyperlink{classObject_a98a79df663772f156d9dcb10f5de3dfe}{mn\+Min\+Depth}
+\begin{DoxyCompactList}\small\item\em Minimum perceived depth. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classObject_ad8d8002cdaacd83e40034ab1b5f7d911}\label{classObject_ad8d8002cdaacd83e40034ab1b5f7d911}} 
+float \hyperlink{classObject_ad8d8002cdaacd83e40034ab1b5f7d911}{mn\+Max\+Depth}
+\begin{DoxyCompactList}\small\item\em Maximum perceived depth. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classObject_ae5eea391874be8f3eb266d81e17f2226}\label{classObject_ae5eea391874be8f3eb266d81e17f2226}} 
+float \hyperlink{classObject_ae5eea391874be8f3eb266d81e17f2226}{mn\+Res}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classObject}{Object} resolution. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classObject_a0ec14c1b27b32ab767db6260afeea589}\label{classObject_a0ec14c1b27b32ab767db6260afeea589}} 
+float \hyperlink{classObject_a0ec14c1b27b32ab767db6260afeea589}{mn\+Dist}
+\begin{DoxyCompactList}\small\item\em Point-\/to-\/polygon test. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classObject_a378aecb006051eee845c107994cfadd8}\label{classObject_a378aecb006051eee845c107994cfadd8}} 
+float {\bfseries m\+Prob\+Thd}
+\item 
+\mbox{\Hypertarget{classObject_ab648d7302834a422496368e5d7532ddb}\label{classObject_ab648d7302834a422496368e5d7532ddb}} 
+int {\bfseries m\+Sensor}
+\item 
+cv\+::\+Mat \hyperlink{classObject_a9cd6392d2ccce339a115090f02275e12}{mK}
+\begin{DoxyCompactList}\small\item\em Camera intrinsic parameters (T\+UM) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classObject_a3ae09a637a49579e135cd031307d6f9c}\label{classObject_a3ae09a637a49579e135cd031307d6f9c}} 
+cv\+::\+Mat \hyperlink{classObject_a3ae09a637a49579e135cd031307d6f9c}{m\+Dist\+Coef} = (cv\+::\+Mat\+\_\+$<$float$>$(4,1) $<$$<$ 0, 0, 0, 0)
+\begin{DoxyCompactList}\small\item\em Camera lense distortion parameters. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classObject_af22d050229447532f43c27561a2e6a2c}\label{classObject_af22d050229447532f43c27561a2e6a2c}} 
+std\+::mutex {\bfseries m\+Mutex\+Object}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A definition of an object in the inventory. 
+
+\begin{DoxyAuthor}{Author}
+Tariq Abuhashim 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+August 2019 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classObject_a8710a1b07956b7eadc6b05563fbb6016}\label{classObject_a8710a1b07956b7eadc6b05563fbb6016}} 
+\index{Object@{Object}!Object@{Object}}
+\index{Object@{Object}!Object@{Object}}
+\subsubsection{\texorpdfstring{Object()}{Object()}}
+{\footnotesize\ttfamily Object\+::\+Object (\begin{DoxyParamCaption}\item[{Key\+Frame $\ast$}]{p\+KF,  }\item[{cv\+::\+Rect}]{Box,  }\item[{cv\+::\+Mat}]{imD,  }\item[{cv\+::\+Mat}]{K,  }\item[{int}]{Sensor }\end{DoxyParamCaption})}
+
+\hyperlink{classObject}{Object} constructor 
+\begin{DoxyParams}{Parameters}
+{\em h} & height of the object depth image (called to initialise an object and its \hyperlink{classTSDF}{T\+S\+DF}) \\
+\hline
+{\em w} & width of the object depth image (called to initialise an object and its \hyperlink{classTSDF}{T\+S\+DF}) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classObject_ae8f5483f459e46687bd01e6f9977afd3}\label{classObject_ae8f5483f459e46687bd01e6f9977afd3}} 
+\index{Object@{Object}!````~Object@{$\sim$\+Object}}
+\index{````~Object@{$\sim$\+Object}!Object@{Object}}
+\subsubsection{\texorpdfstring{$\sim$\+Object()}{~Object()}}
+{\footnotesize\ttfamily Object\+::$\sim$\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\hyperlink{classObject}{Object} destructor (called to delete an object \hyperlink{classTSDF}{T\+S\+DF} from memory) 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classObject_a93f6229c59ae6f435b0a31ee285740ae}\label{classObject_a93f6229c59ae6f435b0a31ee285740ae}} 
+\index{Object@{Object}!Add\+Bounding\+Box@{Add\+Bounding\+Box}}
+\index{Add\+Bounding\+Box@{Add\+Bounding\+Box}!Object@{Object}}
+\subsubsection{\texorpdfstring{Add\+Bounding\+Box()}{AddBoundingBox()}}
+{\footnotesize\ttfamily void Object\+::\+Add\+Bounding\+Box (\begin{DoxyParamCaption}\item[{const cv\+::\+Rect \&}]{box }\end{DoxyParamCaption})}
+
+Adds an object bounding box. 
+\begin{DoxyParams}{Parameters}
+{\em box} & the current bounding box to be added. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classObject_ad585053a0c8b020a262c75fbd8c9d428}\label{classObject_ad585053a0c8b020a262c75fbd8c9d428}} 
+\index{Object@{Object}!Add\+Contour@{Add\+Contour}}
+\index{Add\+Contour@{Add\+Contour}!Object@{Object}}
+\subsubsection{\texorpdfstring{Add\+Contour()}{AddContour()}}
+{\footnotesize\ttfamily void Object\+::\+Add\+Contour (\begin{DoxyParamCaption}\item[{const Contour \&}]{cnt }\end{DoxyParamCaption})}
+
+Adds a contour obsevation into the object vector of contours (mvp\+Contours) 
+\begin{DoxyParams}{Parameters}
+{\em cnt} & the current contour \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classObject_a6661c15e096fc5ec5b6eba0eda114ac8}\label{classObject_a6661c15e096fc5ec5b6eba0eda114ac8}} 
+\index{Object@{Object}!Add\+Key\+Frame@{Add\+Key\+Frame}}
+\index{Add\+Key\+Frame@{Add\+Key\+Frame}!Object@{Object}}
+\subsubsection{\texorpdfstring{Add\+Key\+Frame()}{AddKeyFrame()}}
+{\footnotesize\ttfamily void Object\+::\+Add\+Key\+Frame (\begin{DoxyParamCaption}\item[{Key\+Frame $\ast$}]{p\+KF }\end{DoxyParamCaption})}
+
+A function that includes a Key\+Frame into the set of Key\+Frames where the object is visible. 
+\begin{DoxyParams}{Parameters}
+{\em p\+KF} & the current Key\+Frame to add \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classObject_a419bf8497ede00f30dd9ebacaac18987}\label{classObject_a419bf8497ede00f30dd9ebacaac18987}} 
+\index{Object@{Object}!Add\+New\+Object\+Points@{Add\+New\+Object\+Points}}
+\index{Add\+New\+Object\+Points@{Add\+New\+Object\+Points}!Object@{Object}}
+\subsubsection{\texorpdfstring{Add\+New\+Object\+Points()}{AddNewObjectPoints()}}
+{\footnotesize\ttfamily void Object\+::\+Add\+New\+Object\+Points (\begin{DoxyParamCaption}\item[{Contour}]{mask\+Contour,  }\item[{const cv\+::\+Mat \&}]{im\+Depth,  }\item[{Key\+Frame $\ast$}]{KF,  }\item[{float}]{score }\end{DoxyParamCaption})}
+
+Iterates through all map points and add points the agrees with the current contour into the object 
+\begin{DoxyParams}{Parameters}
+{\em mask\+Contour} & \hyperlink{classObject}{Object} contours \\
+\hline
+{\em im\+Depth} & the current Key\+Frame depth image \\
+\hline
+{\em KF} & pointer to the current O\+R\+B\+S\+L\+A\+M2\+::\+Key\+Frame \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classObject_a0272ba2a458346ce9e53fa0fba7799bd}\label{classObject_a0272ba2a458346ce9e53fa0fba7799bd}} 
+\index{Object@{Object}!Add\+Object\+Point@{Add\+Object\+Point}}
+\index{Add\+Object\+Point@{Add\+Object\+Point}!Object@{Object}}
+\subsubsection{\texorpdfstring{Add\+Object\+Point()}{AddObjectPoint()}}
+{\footnotesize\ttfamily void Object\+::\+Add\+Object\+Point (\begin{DoxyParamCaption}\item[{\hyperlink{classObjectPoint}{Object\+Point} $\ast$}]{p\+MP }\end{DoxyParamCaption})}
+
+A function that includes a \hyperlink{classObjectPoint}{Object\+Point} into the set of Object\+Points that belongs to an object is the map. Hence, this pointer also links the object to 
+\begin{DoxyParams}{Parameters}
+{\em p\+MP} & the current \hyperlink{classObjectPoint}{Object\+Point} to add (mv\+Keys) in its (KF) -\/ Refer to O\+R\+B\+S\+L\+A\+M2\+::\+Key\+Frame for details \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classObject_a1e7dbe097a891bee611dd36d64b5de64}\label{classObject_a1e7dbe097a891bee611dd36d64b5de64}} 
+\index{Object@{Object}!Add\+Observation@{Add\+Observation}}
+\index{Add\+Observation@{Add\+Observation}!Object@{Object}}
+\subsubsection{\texorpdfstring{Add\+Observation()}{AddObservation()}}
+{\footnotesize\ttfamily void Object\+::\+Add\+Observation (\begin{DoxyParamCaption}\item[{Key\+Frame $\ast$}]{p\+KF,  }\item[{size\+\_\+t}]{idx }\end{DoxyParamCaption})}
+
+Adds details of a contour obsevation into the object. This function is used to know which contour in mvp\+Contours is in KF. The implementation allows a contour to be called by either its Key\+Frame or index. 
+\begin{DoxyParams}{Parameters}
+{\em p\+KF} & the current Key\+Frame where the contour is \\
+\hline
+{\em idx} & the index of the countour in the object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classObject_a3f843dde478cc5150746d4bc3a8399f8}\label{classObject_a3f843dde478cc5150746d4bc3a8399f8}} 
+\index{Object@{Object}!Check\+Object\+Points@{Check\+Object\+Points}}
+\index{Check\+Object\+Points@{Check\+Object\+Points}!Object@{Object}}
+\subsubsection{\texorpdfstring{Check\+Object\+Points()}{CheckObjectPoints()}}
+{\footnotesize\ttfamily void Object\+::\+Check\+Object\+Points (\begin{DoxyParamCaption}\item[{Key\+Frame $\ast$}]{K\+F2 }\end{DoxyParamCaption})}
+
+Iterates through all object points and verifies the good and bad ones, then deletes/flags the bad ones. 
+\begin{DoxyParams}{Parameters}
+{\em K\+F2} & pointer to the current O\+R\+B\+S\+L\+A\+M2\+::\+Key\+Frame \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classObject_a2f6308e77b95e3302a2f60c838839a20}\label{classObject_a2f6308e77b95e3302a2f60c838839a20}} 
+\index{Object@{Object}!Erase\+Observation@{Erase\+Observation}}
+\index{Erase\+Observation@{Erase\+Observation}!Object@{Object}}
+\subsubsection{\texorpdfstring{Erase\+Observation()}{EraseObservation()}}
+{\footnotesize\ttfamily void Object\+::\+Erase\+Observation (\begin{DoxyParamCaption}\item[{Key\+Frame $\ast$}]{p\+KF }\end{DoxyParamCaption})}
+
+Removes a contour obsevation into the object. This function is used to delete the contour with index (idx) which is visible in Key\+Frame (KF). The contour is deleted from mvp\+Contours. 
+\begin{DoxyParams}{Parameters}
+{\em p\+KF} & the current Key\+Frame where the contour is \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classObject_ad2535d39e437bf0ea9ff663dbfd3b7d0}\label{classObject_ad2535d39e437bf0ea9ff663dbfd3b7d0}} 
+\index{Object@{Object}!Get\+All\+Key\+Frames@{Get\+All\+Key\+Frames}}
+\index{Get\+All\+Key\+Frames@{Get\+All\+Key\+Frames}!Object@{Object}}
+\subsubsection{\texorpdfstring{Get\+All\+Key\+Frames()}{GetAllKeyFrames()}}
+{\footnotesize\ttfamily vector$<$ Key\+Frame $\ast$ $>$ Object\+::\+Get\+All\+Key\+Frames (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns a vector of all Key\+Frame pointers with an the object contour observations \mbox{\Hypertarget{classObject_a53b5db01428c4bcf2b54c27b0074257f}\label{classObject_a53b5db01428c4bcf2b54c27b0074257f}} 
+\index{Object@{Object}!Get\+All\+Object\+Points@{Get\+All\+Object\+Points}}
+\index{Get\+All\+Object\+Points@{Get\+All\+Object\+Points}!Object@{Object}}
+\subsubsection{\texorpdfstring{Get\+All\+Object\+Points()}{GetAllObjectPoints()}}
+{\footnotesize\ttfamily vector$<$ \hyperlink{classObjectPoint}{Object\+Point} $\ast$ $>$ Object\+::\+Get\+All\+Object\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns a vector of all \hyperlink{classObjectPoint}{Object\+Point} pointers of the object in the map \mbox{\Hypertarget{classObject_a0e1e343172b51146a8e1af92ba2938d1}\label{classObject_a0e1e343172b51146a8e1af92ba2938d1}} 
+\index{Object@{Object}!Get\+Contour@{Get\+Contour}}
+\index{Get\+Contour@{Get\+Contour}!Object@{Object}}
+\subsubsection{\texorpdfstring{Get\+Contour()}{GetContour()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Contour Object\+::\+Get\+Contour (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{idx }\end{DoxyParamCaption})}
+
+Returns a contour observation by index (idx). 
+\begin{DoxyParams}{Parameters}
+{\em idx} & is the called contour index \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classObject_a8295fd33f9ebe850dbfef7b1f70f326d}\label{classObject_a8295fd33f9ebe850dbfef7b1f70f326d}} 
+\index{Object@{Object}!Get\+Contour@{Get\+Contour}}
+\index{Get\+Contour@{Get\+Contour}!Object@{Object}}
+\subsubsection{\texorpdfstring{Get\+Contour()}{GetContour()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Contour Object\+::\+Get\+Contour (\begin{DoxyParamCaption}\item[{Key\+Frame $\ast$}]{KF }\end{DoxyParamCaption})}
+
+Returns a contour observation by Key\+Frame (KF). This method is more reliable at linking contours to Key\+Frames than using indexing. 
+\begin{DoxyParams}{Parameters}
+{\em KF} & is a pointer to Key\+Frame viewing the object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classObject_ab60f1df2e7bd47cdfb77a529d5ad6c69}\label{classObject_ab60f1df2e7bd47cdfb77a529d5ad6c69}} 
+\index{Object@{Object}!Get\+Label@{Get\+Label}}
+\index{Get\+Label@{Get\+Label}!Object@{Object}}
+\subsubsection{\texorpdfstring{Get\+Label()}{GetLabel()}}
+{\footnotesize\ttfamily std\+::string Object\+::\+Get\+Label (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the current classification label of the object. \mbox{\Hypertarget{classObject_a9fbecce492d60540c9d3fa2f81773552}\label{classObject_a9fbecce492d60540c9d3fa2f81773552}} 
+\index{Object@{Object}!Get\+Max\+Observations@{Get\+Max\+Observations}}
+\index{Get\+Max\+Observations@{Get\+Max\+Observations}!Object@{Object}}
+\subsubsection{\texorpdfstring{Get\+Max\+Observations()}{GetMaxObservations()}}
+{\footnotesize\ttfamily int Object\+::\+Get\+Max\+Observations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the maximum (or total) number of 2D point observations that matches the object contours This reflects how many times a \hyperlink{classObjectPoint}{Object\+Point} has agreed with this object contours. \mbox{\Hypertarget{classObject_a211d9a8ea1cfbc9a3bc766b76e5d41be}\label{classObject_a211d9a8ea1cfbc9a3bc766b76e5d41be}} 
+\index{Object@{Object}!Get\+Number\+Of\+Contours@{Get\+Number\+Of\+Contours}}
+\index{Get\+Number\+Of\+Contours@{Get\+Number\+Of\+Contours}!Object@{Object}}
+\subsubsection{\texorpdfstring{Get\+Number\+Of\+Contours()}{GetNumberOfContours()}}
+{\footnotesize\ttfamily size\+\_\+t Object\+::\+Get\+Number\+Of\+Contours (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the total number of object contours in the dataset \mbox{\Hypertarget{classObject_ab17d7f60abbec82a3b45fdf322ea472e}\label{classObject_ab17d7f60abbec82a3b45fdf322ea472e}} 
+\index{Object@{Object}!Get\+Observations@{Get\+Observations}}
+\index{Get\+Observations@{Get\+Observations}!Object@{Object}}
+\subsubsection{\texorpdfstring{Get\+Observations()}{GetObservations()}}
+{\footnotesize\ttfamily std\+::map$<$ Key\+Frame $\ast$, size\+\_\+t $>$ Object\+::\+Get\+Observations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns a map of Keyframes observing the contour and associated index in keyframe \mbox{\Hypertarget{classObject_a3513873d737b0557c12c47c19ae2c291}\label{classObject_a3513873d737b0557c12c47c19ae2c291}} 
+\index{Object@{Object}!Get\+Reference\+Key\+Frame@{Get\+Reference\+Key\+Frame}}
+\index{Get\+Reference\+Key\+Frame@{Get\+Reference\+Key\+Frame}!Object@{Object}}
+\subsubsection{\texorpdfstring{Get\+Reference\+Key\+Frame()}{GetReferenceKeyFrame()}}
+{\footnotesize\ttfamily Key\+Frame $\ast$ Object\+::\+Get\+Reference\+Key\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+returns a pointer to the map object reference Key\+Frame (usually the first Key\+Frame seeing object) \mbox{\Hypertarget{classObject_a440178c130d1b50d232d9b96510e45a6}\label{classObject_a440178c130d1b50d232d9b96510e45a6}} 
+\index{Object@{Object}!Get\+Score@{Get\+Score}}
+\index{Get\+Score@{Get\+Score}!Object@{Object}}
+\subsubsection{\texorpdfstring{Get\+Score()}{GetScore()}}
+{\footnotesize\ttfamily double Object\+::\+Get\+Score (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the current classification score of the object. \mbox{\Hypertarget{classObject_ad4cb82b18bd457d631cb79cec0db98ac}\label{classObject_ad4cb82b18bd457d631cb79cec0db98ac}} 
+\index{Object@{Object}!Has\+Enough\+Object\+Points@{Has\+Enough\+Object\+Points}}
+\index{Has\+Enough\+Object\+Points@{Has\+Enough\+Object\+Points}!Object@{Object}}
+\subsubsection{\texorpdfstring{Has\+Enough\+Object\+Points()}{HasEnoughObjectPoints()}}
+{\footnotesize\ttfamily bool Object\+::\+Has\+Enough\+Object\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Verifies if an object contour contains enough 2D map points to be considered a valid object measurement. \mbox{\Hypertarget{classObject_a438ac9db297561c832a416b304e40e87}\label{classObject_a438ac9db297561c832a416b304e40e87}} 
+\index{Object@{Object}!Integrate@{Integrate}}
+\index{Integrate@{Integrate}!Object@{Object}}
+\subsubsection{\texorpdfstring{Integrate()}{Integrate()}}
+{\footnotesize\ttfamily void Object\+::\+Integrate (\begin{DoxyParamCaption}\item[{cv\+::\+Mat}]{im\+R\+GB,  }\item[{cv\+::\+Mat}]{imD,  }\item[{cv\+::\+Mat}]{T }\end{DoxyParamCaption})}
+
+Integrates the current depth image into the object \hyperlink{classTSDF}{T\+S\+DF} \mbox{\Hypertarget{classObject_a3125138275bf5ab9ea78073b18a4f7c7}\label{classObject_a3125138275bf5ab9ea78073b18a4f7c7}} 
+\index{Object@{Object}!is\+Bad@{is\+Bad}}
+\index{is\+Bad@{is\+Bad}!Object@{Object}}
+\subsubsection{\texorpdfstring{is\+Bad()}{isBad()}}
+{\footnotesize\ttfamily bool Object\+::is\+Bad (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns true if the object is bad (F\+I\+X\+ME\+: not implemented yet) \mbox{\Hypertarget{classObject_a38c47e88eb887dc62031e1c817e5fead}\label{classObject_a38c47e88eb887dc62031e1c817e5fead}} 
+\index{Object@{Object}!Is\+In\+Object@{Is\+In\+Object}}
+\index{Is\+In\+Object@{Is\+In\+Object}!Object@{Object}}
+\subsubsection{\texorpdfstring{Is\+In\+Object()}{IsInObject()}}
+{\footnotesize\ttfamily bool Object\+::\+Is\+In\+Object (\begin{DoxyParamCaption}\item[{\hyperlink{classObjectPoint}{Object\+Point} $\ast$}]{MP }\end{DoxyParamCaption})}
+
+Verifies if a \hyperlink{classObjectPoint}{Object\+Point} lays inside an object contours. 
+\begin{DoxyParams}{Parameters}
+{\em MP} & a pointer to the current \hyperlink{classObjectPoint}{Object\+Point} to test. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classObject_aae2511e9146551564784a5841e104aac}\label{classObject_aae2511e9146551564784a5841e104aac}} 
+\index{Object@{Object}!l\+Id@{l\+Id}}
+\index{l\+Id@{l\+Id}!Object@{Object}}
+\subsubsection{\texorpdfstring{l\+Id()}{lId()}}
+{\footnotesize\ttfamily static bool Object\+::l\+Id (\begin{DoxyParamCaption}\item[{\hyperlink{classObject}{Object} $\ast$}]{p\+M\+O1,  }\item[{\hyperlink{classObject}{Object} $\ast$}]{p\+M\+O2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Custom compare function to sort map objects using their index (mn\+Id) \mbox{\Hypertarget{classObject_a3b40498cabe036689eff2862e1fd8143}\label{classObject_a3b40498cabe036689eff2862e1fd8143}} 
+\index{Object@{Object}!Observations@{Observations}}
+\index{Observations@{Observations}!Object@{Object}}
+\subsubsection{\texorpdfstring{Observations()}{Observations()}}
+{\footnotesize\ttfamily int Object\+::\+Observations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the number of contours of the objects in the dataset \mbox{\Hypertarget{classObject_a38bd011f1b615252420ae2e89d786205}\label{classObject_a38bd011f1b615252420ae2e89d786205}} 
+\index{Object@{Object}!Project\+Object\+Point@{Project\+Object\+Point}}
+\index{Project\+Object\+Point@{Project\+Object\+Point}!Object@{Object}}
+\subsubsection{\texorpdfstring{Project\+Object\+Point()}{ProjectObjectPoint()}}
+{\footnotesize\ttfamily cv\+::\+Point Object\+::\+Project\+Object\+Point (\begin{DoxyParamCaption}\item[{\hyperlink{classObjectPoint}{Object\+Point} $\ast$}]{MP,  }\item[{Key\+Frame $\ast$}]{KF }\end{DoxyParamCaption})}
+
+Projects a 3D \hyperlink{classObjectPoint}{Object\+Point} into a 2D Key\+Frame image 
+\begin{DoxyParams}{Parameters}
+{\em MP} & a pointer to the current \hyperlink{classObjectPoint}{Object\+Point} \\
+\hline
+{\em KF} & a pointer to the current Key\+Frame \\
+\hline
+{\em K} & intrinsic calibration parameters \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classObject_a2994e04dbefd498087ad3f5a0ed41057}\label{classObject_a2994e04dbefd498087ad3f5a0ed41057}} 
+\index{Object@{Object}!Set\+Bad\+Flag@{Set\+Bad\+Flag}}
+\index{Set\+Bad\+Flag@{Set\+Bad\+Flag}!Object@{Object}}
+\subsubsection{\texorpdfstring{Set\+Bad\+Flag()}{SetBadFlag()}}
+{\footnotesize\ttfamily void Object\+::\+Set\+Bad\+Flag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sets the object bad (F\+I\+X\+ME\+: not implemented yet) \mbox{\Hypertarget{classObject_ad680f6b7841320d67f6caf8813dc7aeb}\label{classObject_ad680f6b7841320d67f6caf8813dc7aeb}} 
+\index{Object@{Object}!Set\+Label@{Set\+Label}}
+\index{Set\+Label@{Set\+Label}!Object@{Object}}
+\subsubsection{\texorpdfstring{Set\+Label()}{SetLabel()}}
+{\footnotesize\ttfamily void Object\+::\+Set\+Label (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{label }\end{DoxyParamCaption})}
+
+Sets the classification label of the object. 
+\begin{DoxyParams}{Parameters}
+{\em label} & the current label from \hyperlink{classMaskRCNN}{Mask\+R\+C\+NN} or label-\/fusion rule ? \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classObject_a92f56ff635e752ffa2674596c8f7c1ae}\label{classObject_a92f56ff635e752ffa2674596c8f7c1ae}} 
+\index{Object@{Object}!Update\+Score@{Update\+Score}}
+\index{Update\+Score@{Update\+Score}!Object@{Object}}
+\subsubsection{\texorpdfstring{Update\+Score()}{UpdateScore()}}
+{\footnotesize\ttfamily void Object\+::\+Update\+Score (\begin{DoxyParamCaption}\item[{const double}]{score }\end{DoxyParamCaption})}
+
+Updates the score of the object given most recent contour/\+Mask\+R\+C\+NN obsevations. 
+\begin{DoxyParams}{Parameters}
+{\em score} & the current score from \hyperlink{classMaskRCNN}{Mask\+R\+C\+NN} or score-\/fusion rule ? \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classObject_a9cd6392d2ccce339a115090f02275e12}\label{classObject_a9cd6392d2ccce339a115090f02275e12}} 
+\index{Object@{Object}!mK@{mK}}
+\index{mK@{mK}!Object@{Object}}
+\subsubsection{\texorpdfstring{mK}{mK}}
+{\footnotesize\ttfamily cv\+::\+Mat Object\+::mK\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Camera intrinsic parameters (T\+UM) 
+
+Camera intrinsic parameters (Kitti) 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mrt/\+Dev/maskrcnn\+\_\+slam\+\_\+b/include/Object.\+hpp\item 
+/home/mrt/\+Dev/maskrcnn\+\_\+slam\+\_\+b/src/Object.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,215 @@
+\hypertarget{classObjectPoint}{}\section{Object\+Point Class Reference}
+\label{classObjectPoint}\index{Object\+Point@{Object\+Point}}
+
+
+Collaboration diagram for Object\+Point\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{classObjectPoint__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classObjectPoint_abe20569ffec71bce3c7798dd20098eff}\label{classObjectPoint_abe20569ffec71bce3c7798dd20098eff}} 
+{\bfseries Object\+Point} (const cv\+::\+Mat \&Pos, Key\+Frame $\ast$p\+Ref\+KF)
+\item 
+\mbox{\Hypertarget{classObjectPoint_a9202ad0239743be43bbae9af182fed56}\label{classObjectPoint_a9202ad0239743be43bbae9af182fed56}} 
+void {\bfseries Set\+World\+Pos} (const cv\+::\+Mat \&Pos)
+\item 
+\mbox{\Hypertarget{classObjectPoint_ae872c8a2e3ca4b541252e13555f625fb}\label{classObjectPoint_ae872c8a2e3ca4b541252e13555f625fb}} 
+cv\+::\+Mat {\bfseries Get\+World\+Pos} ()
+\item 
+\mbox{\Hypertarget{classObjectPoint_ad543762a92802bf9fb601d208e4c007c}\label{classObjectPoint_ad543762a92802bf9fb601d208e4c007c}} 
+cv\+::\+Mat {\bfseries Get\+Normal} ()
+\item 
+\mbox{\Hypertarget{classObjectPoint_ac205d86215aa26315881f4db4ef695b5}\label{classObjectPoint_ac205d86215aa26315881f4db4ef695b5}} 
+Key\+Frame $\ast$ {\bfseries Get\+Reference\+Key\+Frame} ()
+\item 
+\mbox{\Hypertarget{classObjectPoint_a38d19937c25237ba87eb32e8fd2d935b}\label{classObjectPoint_a38d19937c25237ba87eb32e8fd2d935b}} 
+std\+::map$<$ Key\+Frame $\ast$, size\+\_\+t $>$ {\bfseries Get\+Observations} ()
+\item 
+\mbox{\Hypertarget{classObjectPoint_ae7d2d3ae8c19070f2bcf41f5507ca194}\label{classObjectPoint_ae7d2d3ae8c19070f2bcf41f5507ca194}} 
+int {\bfseries Observations} ()
+\item 
+\mbox{\Hypertarget{classObjectPoint_ade4a1f546a7dc3d0a17fd7f73b5252e5}\label{classObjectPoint_ade4a1f546a7dc3d0a17fd7f73b5252e5}} 
+void {\bfseries Add\+Observation} (Key\+Frame $\ast$p\+KF, size\+\_\+t idx)
+\item 
+\mbox{\Hypertarget{classObjectPoint_a59da3ff3ffccde349304b779f3457254}\label{classObjectPoint_a59da3ff3ffccde349304b779f3457254}} 
+void {\bfseries Erase\+Observation} (Key\+Frame $\ast$p\+KF)
+\item 
+\mbox{\Hypertarget{classObjectPoint_a6952d1e522571ebc982708b931006ac1}\label{classObjectPoint_a6952d1e522571ebc982708b931006ac1}} 
+int {\bfseries Get\+Index\+In\+Key\+Frame} (Key\+Frame $\ast$p\+KF)
+\item 
+\mbox{\Hypertarget{classObjectPoint_a2f2689ae271ff5507808625c575da632}\label{classObjectPoint_a2f2689ae271ff5507808625c575da632}} 
+bool {\bfseries Is\+In\+Key\+Frame} (Key\+Frame $\ast$p\+KF)
+\item 
+\mbox{\Hypertarget{classObjectPoint_ac0cb808adfcc0b0cdc73c8babdd35af6}\label{classObjectPoint_ac0cb808adfcc0b0cdc73c8babdd35af6}} 
+void {\bfseries Set\+Bad\+Flag} ()
+\item 
+\mbox{\Hypertarget{classObjectPoint_ac8c00f10d0f9523b28508a84a99823e3}\label{classObjectPoint_ac8c00f10d0f9523b28508a84a99823e3}} 
+bool {\bfseries is\+Bad} ()
+\item 
+\mbox{\Hypertarget{classObjectPoint_a3e3ace32e8166de6064808df9594ca15}\label{classObjectPoint_a3e3ace32e8166de6064808df9594ca15}} 
+void {\bfseries Replace} (\hyperlink{classObjectPoint}{Object\+Point} $\ast$p\+MP)
+\item 
+\mbox{\Hypertarget{classObjectPoint_ab6c95f0b65d8be939439629cb47a8ec7}\label{classObjectPoint_ab6c95f0b65d8be939439629cb47a8ec7}} 
+\hyperlink{classObjectPoint}{Object\+Point} $\ast$ {\bfseries Get\+Replaced} ()
+\item 
+\mbox{\Hypertarget{classObjectPoint_acc115dfc5ed21459a75babb2a2e75155}\label{classObjectPoint_acc115dfc5ed21459a75babb2a2e75155}} 
+void {\bfseries Increase\+Visible} (int n=1)
+\item 
+\mbox{\Hypertarget{classObjectPoint_a08bdc20dc077b215fe81766d65ae2e38}\label{classObjectPoint_a08bdc20dc077b215fe81766d65ae2e38}} 
+void {\bfseries Increase\+Found} (int n=1)
+\item 
+\mbox{\Hypertarget{classObjectPoint_a3d2a7145f524877ce771c4bed89673f5}\label{classObjectPoint_a3d2a7145f524877ce771c4bed89673f5}} 
+float {\bfseries Get\+Found\+Ratio} ()
+\item 
+\mbox{\Hypertarget{classObjectPoint_a3d9c31d729335ff50424378f942bce2e}\label{classObjectPoint_a3d9c31d729335ff50424378f942bce2e}} 
+int {\bfseries Get\+Found} ()
+\item 
+\mbox{\Hypertarget{classObjectPoint_aabc6f5e6fcf13ca0182b448f264695e7}\label{classObjectPoint_aabc6f5e6fcf13ca0182b448f264695e7}} 
+void {\bfseries Update\+Foreground\+Probability} (float score)
+\item 
+\mbox{\Hypertarget{classObjectPoint_a90bd8a4f458624d4c775c8828c2cc70f}\label{classObjectPoint_a90bd8a4f458624d4c775c8828c2cc70f}} 
+void {\bfseries Update\+Background\+Probability} (float score)
+\item 
+\mbox{\Hypertarget{classObjectPoint_a31d5846d3f9b5c21b0196437aa62e1cc}\label{classObjectPoint_a31d5846d3f9b5c21b0196437aa62e1cc}} 
+float {\bfseries Get\+Foreground\+Probability} ()
+\item 
+\mbox{\Hypertarget{classObjectPoint_a61341cca7866c30ed0965aafeb919405}\label{classObjectPoint_a61341cca7866c30ed0965aafeb919405}} 
+float {\bfseries Get\+Background\+Probability} ()
+\item 
+\mbox{\Hypertarget{classObjectPoint_a0263c72ab207e6c9316015ea4f2d1a54}\label{classObjectPoint_a0263c72ab207e6c9316015ea4f2d1a54}} 
+float {\bfseries Get\+Point\+Probability} ()
+\item 
+\mbox{\Hypertarget{classObjectPoint_a2a2238b78f8cb537e0d7c037ef3e420f}\label{classObjectPoint_a2a2238b78f8cb537e0d7c037ef3e420f}} 
+void {\bfseries Set\+Probability\+Threshold} (float m\+Prob\+Thd)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classObjectPoint_ab32d8a7ef63652fbfb27ceadcb36eb98}\label{classObjectPoint_ab32d8a7ef63652fbfb27ceadcb36eb98}} 
+long unsigned int {\bfseries mn\+Id}
+\item 
+\mbox{\Hypertarget{classObjectPoint_a074258ee4866dd4b014d28f8197d2614}\label{classObjectPoint_a074258ee4866dd4b014d28f8197d2614}} 
+long int {\bfseries mn\+First\+K\+Fid}
+\item 
+\mbox{\Hypertarget{classObjectPoint_a4f6299bef9f8413e08fd32ee0cb31ad9}\label{classObjectPoint_a4f6299bef9f8413e08fd32ee0cb31ad9}} 
+long int {\bfseries mn\+First\+Frame}
+\item 
+\mbox{\Hypertarget{classObjectPoint_a8e952dbedec3c084e3f586939c8d0fd3}\label{classObjectPoint_a8e952dbedec3c084e3f586939c8d0fd3}} 
+int {\bfseries n\+Obs}
+\item 
+\mbox{\Hypertarget{classObjectPoint_ada7fece10c2e93aeec07f8ff5036ebcc}\label{classObjectPoint_ada7fece10c2e93aeec07f8ff5036ebcc}} 
+float {\bfseries m\+Track\+ProjX}
+\item 
+\mbox{\Hypertarget{classObjectPoint_ad2e82e1e25f4dbf77f130f80cc199403}\label{classObjectPoint_ad2e82e1e25f4dbf77f130f80cc199403}} 
+float {\bfseries m\+Track\+ProjY}
+\item 
+\mbox{\Hypertarget{classObjectPoint_a6d05e2d44225ff46f59d4f303163843f}\label{classObjectPoint_a6d05e2d44225ff46f59d4f303163843f}} 
+float {\bfseries m\+Track\+Proj\+XR}
+\item 
+\mbox{\Hypertarget{classObjectPoint_abbef8a45bb5cf3af4f29dd414f7ab1a6}\label{classObjectPoint_abbef8a45bb5cf3af4f29dd414f7ab1a6}} 
+bool {\bfseries mb\+Track\+In\+View}
+\item 
+\mbox{\Hypertarget{classObjectPoint_a2d747f3f60875157e8e839d11958240d}\label{classObjectPoint_a2d747f3f60875157e8e839d11958240d}} 
+int {\bfseries mn\+Track\+Scale\+Level}
+\item 
+\mbox{\Hypertarget{classObjectPoint_a93195b2f7849f39b7966131dab159172}\label{classObjectPoint_a93195b2f7849f39b7966131dab159172}} 
+float {\bfseries m\+Track\+View\+Cos}
+\item 
+\mbox{\Hypertarget{classObjectPoint_a7180529cb82f2e30273f547200c4ff25}\label{classObjectPoint_a7180529cb82f2e30273f547200c4ff25}} 
+long unsigned int {\bfseries mn\+Track\+Reference\+For\+Frame}
+\item 
+\mbox{\Hypertarget{classObjectPoint_a8741220bce6b1f78c3d1f6d46bba996f}\label{classObjectPoint_a8741220bce6b1f78c3d1f6d46bba996f}} 
+long unsigned int {\bfseries mn\+Last\+Frame\+Seen}
+\item 
+\mbox{\Hypertarget{classObjectPoint_a0f5d63ec23438d2f1a9f144d6719ff74}\label{classObjectPoint_a0f5d63ec23438d2f1a9f144d6719ff74}} 
+long unsigned int {\bfseries mn\+B\+A\+Local\+For\+KF}
+\item 
+\mbox{\Hypertarget{classObjectPoint_a25d5689ad67887ffd0eb1b11fe9f9f9a}\label{classObjectPoint_a25d5689ad67887ffd0eb1b11fe9f9f9a}} 
+long unsigned int {\bfseries mn\+Fuse\+Candidate\+For\+KF}
+\item 
+\mbox{\Hypertarget{classObjectPoint_ac2d323be3ef5a83685aca8bdd92ec791}\label{classObjectPoint_ac2d323be3ef5a83685aca8bdd92ec791}} 
+long unsigned int {\bfseries mn\+Loop\+Point\+For\+KF}
+\item 
+\mbox{\Hypertarget{classObjectPoint_a70bed49e3d5298384dc6ce98c28ecc14}\label{classObjectPoint_a70bed49e3d5298384dc6ce98c28ecc14}} 
+long unsigned int {\bfseries mn\+Corrected\+By\+KF}
+\item 
+\mbox{\Hypertarget{classObjectPoint_a8a71b4ace29c1509edc29c1cf1df9a8e}\label{classObjectPoint_a8a71b4ace29c1509edc29c1cf1df9a8e}} 
+long unsigned int {\bfseries mn\+Corrected\+Reference}
+\item 
+\mbox{\Hypertarget{classObjectPoint_ad391907075cbc94b0c000e355226a0f0}\label{classObjectPoint_ad391907075cbc94b0c000e355226a0f0}} 
+cv\+::\+Mat {\bfseries m\+Pos\+G\+BA}
+\item 
+\mbox{\Hypertarget{classObjectPoint_af29a1c375295813427d7919cf9938703}\label{classObjectPoint_af29a1c375295813427d7919cf9938703}} 
+long unsigned int {\bfseries mn\+B\+A\+Global\+For\+KF}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classObjectPoint_afc638ffc169c7e4788a0939dc1363df9}\label{classObjectPoint_afc638ffc169c7e4788a0939dc1363df9}} 
+static long unsigned int {\bfseries n\+Next\+Id} =0
+\item 
+\mbox{\Hypertarget{classObjectPoint_a38290a77febdb6f9320d41381f7b949d}\label{classObjectPoint_a38290a77febdb6f9320d41381f7b949d}} 
+static std\+::mutex {\bfseries m\+Global\+Mutex}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classObjectPoint_ad860667222a3669a8feccb9ff73b2556}\label{classObjectPoint_ad860667222a3669a8feccb9ff73b2556}} 
+cv\+::\+Mat {\bfseries m\+World\+Pos}
+\item 
+\mbox{\Hypertarget{classObjectPoint_a62aca927653d3591f1211ccc06a6cffa}\label{classObjectPoint_a62aca927653d3591f1211ccc06a6cffa}} 
+std\+::map$<$ Key\+Frame $\ast$, size\+\_\+t $>$ {\bfseries m\+Observations}
+\item 
+\mbox{\Hypertarget{classObjectPoint_a86e5ecd275a9594f8b72c35cb9735195}\label{classObjectPoint_a86e5ecd275a9594f8b72c35cb9735195}} 
+cv\+::\+Mat {\bfseries m\+Normal\+Vector}
+\item 
+\mbox{\Hypertarget{classObjectPoint_a3cf257ac63232c6dbd992defe6d16875}\label{classObjectPoint_a3cf257ac63232c6dbd992defe6d16875}} 
+cv\+::\+Mat {\bfseries m\+Descriptor}
+\item 
+\mbox{\Hypertarget{classObjectPoint_a43e976a71483d1700aa48013874409dd}\label{classObjectPoint_a43e976a71483d1700aa48013874409dd}} 
+Key\+Frame $\ast$ {\bfseries mp\+Ref\+KF}
+\item 
+\mbox{\Hypertarget{classObjectPoint_a9465a617bd9530427916b13acdf85c46}\label{classObjectPoint_a9465a617bd9530427916b13acdf85c46}} 
+int {\bfseries mn\+Visible}
+\item 
+\mbox{\Hypertarget{classObjectPoint_acc0516cd3cc04291894c1d545d2f68be}\label{classObjectPoint_acc0516cd3cc04291894c1d545d2f68be}} 
+int {\bfseries mn\+Found}
+\item 
+\mbox{\Hypertarget{classObjectPoint_ae98d104a2a5e64058103a971018b03d7}\label{classObjectPoint_ae98d104a2a5e64058103a971018b03d7}} 
+bool {\bfseries mb\+Bad}
+\item 
+\mbox{\Hypertarget{classObjectPoint_ad9fd3f0350b803aabb35f69b701f1ec2}\label{classObjectPoint_ad9fd3f0350b803aabb35f69b701f1ec2}} 
+\hyperlink{classObjectPoint}{Object\+Point} $\ast$ {\bfseries mp\+Replaced}
+\item 
+\mbox{\Hypertarget{classObjectPoint_a5024e4350beea8ada14797e318fafe16}\label{classObjectPoint_a5024e4350beea8ada14797e318fafe16}} 
+float {\bfseries mf\+Min\+Distance}
+\item 
+\mbox{\Hypertarget{classObjectPoint_abf9914881a4b29e2f0c1e50f2bf9bf97}\label{classObjectPoint_abf9914881a4b29e2f0c1e50f2bf9bf97}} 
+float {\bfseries mf\+Max\+Distance}
+\item 
+\mbox{\Hypertarget{classObjectPoint_a7e37ed3d865c22a50c9a003b9f9d69c3}\label{classObjectPoint_a7e37ed3d865c22a50c9a003b9f9d69c3}} 
+float {\bfseries mn\+Fp}
+\item 
+\mbox{\Hypertarget{classObjectPoint_a59b71ed1fc9809df51dcb7e817da002e}\label{classObjectPoint_a59b71ed1fc9809df51dcb7e817da002e}} 
+float {\bfseries mn\+Bp}
+\item 
+\mbox{\Hypertarget{classObjectPoint_ac88069d8ba7be16793caf29f4bff6918}\label{classObjectPoint_ac88069d8ba7be16793caf29f4bff6918}} 
+float {\bfseries m\+Min\+Prob}
+\item 
+\mbox{\Hypertarget{classObjectPoint_a1733bea98793cdedecd489593e649acf}\label{classObjectPoint_a1733bea98793cdedecd489593e649acf}} 
+std\+::mutex {\bfseries m\+Mutex\+Pos}
+\item 
+\mbox{\Hypertarget{classObjectPoint_aee62db63a3c8a20211f31a33d43ee0ec}\label{classObjectPoint_aee62db63a3c8a20211f31a33d43ee0ec}} 
+std\+::mutex {\bfseries m\+Mutex\+Features}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mrt/\+Dev/maskrcnn\+\_\+slam\+\_\+b/include/Object\+Point.\+hpp\item 
+/home/mrt/\+Dev/maskrcnn\+\_\+slam\+\_\+b/src/Object\+Point.\+cpp\end{DoxyCompactItemize}

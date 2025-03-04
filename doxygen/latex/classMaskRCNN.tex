@@ -1,0 +1,179 @@
+\hypertarget{classMaskRCNN}{}\section{Mask\+R\+C\+NN Class Reference}
+\label{classMaskRCNN}\index{Mask\+R\+C\+NN@{Mask\+R\+C\+NN}}
+
+
+An interface between maskrcnn-\/benchmark in python and \hyperlink{classEngine}{Engine} in C++.  
+
+
+
+
+{\ttfamily \#include $<$Mask\+R\+C\+N\+N.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMaskRCNN_ad50b7f9668dbe3fbd9f63a509ffaa589}{Mask\+R\+C\+NN} ()
+\item 
+\hyperlink{classMaskRCNN_a56a6b1e8170b6cb5aceb0fcd1b529eeb}{$\sim$\+Mask\+R\+C\+NN} ()
+\item 
+Py\+Object $\ast$ \hyperlink{classMaskRCNN_ac053158f922a85807ba5bba9822848c7}{get\+Py\+Object} (const char $\ast$name)
+\item 
+void \hyperlink{classMaskRCNN_ad5c6a4317fbd032d5570ef672921d2b7}{extract\+Class\+I\+Ds} (std\+::vector$<$ int $>$ \&result)
+\item 
+\mbox{\Hypertarget{classMaskRCNN_a7f8f5e498aaac37e57d46a029e7a3013}\label{classMaskRCNN_a7f8f5e498aaac37e57d46a029e7a3013}} 
+void {\bfseries extract\+Class\+I\+Ds} ()
+\item 
+void \hyperlink{classMaskRCNN_af7c4acde0601ceb535d1ab7d79cf5825}{extract\+Class\+Scores} (std\+::vector$<$ double $>$ \&result)
+\item 
+\mbox{\Hypertarget{classMaskRCNN_a91352e91d286e8829daed64eaef84aa8}\label{classMaskRCNN_a91352e91d286e8829daed64eaef84aa8}} 
+void {\bfseries extract\+Class\+Scores} ()
+\item 
+void \hyperlink{classMaskRCNN_a72c4683fed51fb8090971ce9baca40bb}{extract\+Bounding\+Boxes} (std\+::vector$<$ cv\+::\+Rect $>$ \&result)
+\item 
+\mbox{\Hypertarget{classMaskRCNN_abd655a37eaa3d108e1c0018de9de697f}\label{classMaskRCNN_abd655a37eaa3d108e1c0018de9de697f}} 
+void {\bfseries extract\+Bounding\+Boxes} ()
+\item 
+void \hyperlink{classMaskRCNN_a3645133094358fbe319b4ae6015d662a}{extract\+Image} (std\+::vector$<$ cv\+::\+Mat $>$ \&result)
+\item 
+\mbox{\Hypertarget{classMaskRCNN_a76780ee7dc9746a7e636af05a7f9737a}\label{classMaskRCNN_a76780ee7dc9746a7e636af05a7f9737a}} 
+void {\bfseries extract\+Image} ()
+\item 
+void \hyperlink{classMaskRCNN_a5663b7c0e5e9fd148802735bd7c3f368}{Run} (cv\+::\+Mat Image, std\+::vector$<$ cv\+::\+Rect $>$ \&Rec, std\+::vector$<$ cv\+::\+Mat $>$ \&Mask, std\+::vector$<$ int $>$ \&Id, std\+::vector$<$ double $>$ \&score)
+\item 
+\mbox{\Hypertarget{classMaskRCNN_a4db74b63c6d69d8d25302b4cb15c0e55}\label{classMaskRCNN_a4db74b63c6d69d8d25302b4cb15c0e55}} 
+void {\bfseries Run} ()
+\item 
+\mbox{\Hypertarget{classMaskRCNN_a474f94fbb64745662c855712d507a2b1}\label{classMaskRCNN_a474f94fbb64745662c855712d507a2b1}} 
+void {\bfseries Run} (cv\+::\+Mat Image)
+\item 
+\mbox{\Hypertarget{classMaskRCNN_a370fc233cd71b9d46ce363ebd905963a}\label{classMaskRCNN_a370fc233cd71b9d46ce363ebd905963a}} 
+std\+::vector$<$ int $>$ {\bfseries Get\+Labels} ()
+\item 
+\mbox{\Hypertarget{classMaskRCNN_ab066b1ae28085d34e05d1565f9a4deab}\label{classMaskRCNN_ab066b1ae28085d34e05d1565f9a4deab}} 
+std\+::vector$<$ double $>$ {\bfseries Get\+Scores} ()
+\item 
+\mbox{\Hypertarget{classMaskRCNN_a5d55b8bc70406a9a10ef4499d0ff8e12}\label{classMaskRCNN_a5d55b8bc70406a9a10ef4499d0ff8e12}} 
+std\+::vector$<$ cv\+::\+Mat $>$ {\bfseries Get\+Masks} ()
+\item 
+\mbox{\Hypertarget{classMaskRCNN_a27a3a447097c06ba0b22388aa80b798b}\label{classMaskRCNN_a27a3a447097c06ba0b22388aa80b798b}} 
+std\+::vector$<$ cv\+::\+Rect $>$ {\bfseries Get\+Boxes} ()
+\item 
+\mbox{\Hypertarget{classMaskRCNN_a44fae16e8ff69796041f461d428fee98}\label{classMaskRCNN_a44fae16e8ff69796041f461d428fee98}} 
+void {\bfseries Insert\+Image} (cv\+::\+Mat Image)
+\item 
+\mbox{\Hypertarget{classMaskRCNN_a083eb72d76b28594cffb274a71eaf7ac}\label{classMaskRCNN_a083eb72d76b28594cffb274a71eaf7ac}} 
+bool {\bfseries Check\+New\+Images} ()
+\item 
+\mbox{\Hypertarget{classMaskRCNN_a1f919e35e712e6119f9c38a8ea8f81c0}\label{classMaskRCNN_a1f919e35e712e6119f9c38a8ea8f81c0}} 
+void {\bfseries Process\+New\+Image} ()
+\item 
+\mbox{\Hypertarget{classMaskRCNN_a54b77286554c60d9e0ad01217f701ff1}\label{classMaskRCNN_a54b77286554c60d9e0ad01217f701ff1}} 
+void {\bfseries Reset} ()
+\item 
+\mbox{\Hypertarget{classMaskRCNN_ae2912918796d4ae6a2f2291d181b745b}\label{classMaskRCNN_ae2912918796d4ae6a2f2291d181b745b}} 
+void {\bfseries show2d} (cv\+::\+Mat \&im\+R\+GB, unordered\+\_\+map$<$ int, string $>$ \&categories)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An interface between maskrcnn-\/benchmark in python and \hyperlink{classEngine}{Engine} in C++. 
+
+\begin{DoxyAuthor}{Author}
+Tariq Abuhashim 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+August 2019 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMaskRCNN_ad50b7f9668dbe3fbd9f63a509ffaa589}\label{classMaskRCNN_ad50b7f9668dbe3fbd9f63a509ffaa589}} 
+\index{Mask\+R\+C\+NN@{Mask\+R\+C\+NN}!Mask\+R\+C\+NN@{Mask\+R\+C\+NN}}
+\index{Mask\+R\+C\+NN@{Mask\+R\+C\+NN}!Mask\+R\+C\+NN@{Mask\+R\+C\+NN}}
+\subsubsection{\texorpdfstring{Mask\+R\+C\+N\+N()}{MaskRCNN()}}
+{\footnotesize\ttfamily Mask\+R\+C\+N\+N\+::\+Mask\+R\+C\+NN (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor \mbox{\Hypertarget{classMaskRCNN_a56a6b1e8170b6cb5aceb0fcd1b529eeb}\label{classMaskRCNN_a56a6b1e8170b6cb5aceb0fcd1b529eeb}} 
+\index{Mask\+R\+C\+NN@{Mask\+R\+C\+NN}!````~Mask\+R\+C\+NN@{$\sim$\+Mask\+R\+C\+NN}}
+\index{````~Mask\+R\+C\+NN@{$\sim$\+Mask\+R\+C\+NN}!Mask\+R\+C\+NN@{Mask\+R\+C\+NN}}
+\subsubsection{\texorpdfstring{$\sim$\+Mask\+R\+C\+N\+N()}{~MaskRCNN()}}
+{\footnotesize\ttfamily Mask\+R\+C\+N\+N\+::$\sim$\+Mask\+R\+C\+NN (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default destructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMaskRCNN_a72c4683fed51fb8090971ce9baca40bb}\label{classMaskRCNN_a72c4683fed51fb8090971ce9baca40bb}} 
+\index{Mask\+R\+C\+NN@{Mask\+R\+C\+NN}!extract\+Bounding\+Boxes@{extract\+Bounding\+Boxes}}
+\index{extract\+Bounding\+Boxes@{extract\+Bounding\+Boxes}!Mask\+R\+C\+NN@{Mask\+R\+C\+NN}}
+\subsubsection{\texorpdfstring{extract\+Bounding\+Boxes()}{extractBoundingBoxes()}}
+{\footnotesize\ttfamily void Mask\+R\+C\+N\+N\+::extract\+Bounding\+Boxes (\begin{DoxyParamCaption}\item[{std\+::vector$<$ cv\+::\+Rect $>$ \&}]{result }\end{DoxyParamCaption})}
+
+Extracts object instance bounding box coordinates from maskrcnn-\/benchmark instance 
+\begin{DoxyParams}{Parameters}
+{\em result} & A vector of object instance bounding box coordinates \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMaskRCNN_ad5c6a4317fbd032d5570ef672921d2b7}\label{classMaskRCNN_ad5c6a4317fbd032d5570ef672921d2b7}} 
+\index{Mask\+R\+C\+NN@{Mask\+R\+C\+NN}!extract\+Class\+I\+Ds@{extract\+Class\+I\+Ds}}
+\index{extract\+Class\+I\+Ds@{extract\+Class\+I\+Ds}!Mask\+R\+C\+NN@{Mask\+R\+C\+NN}}
+\subsubsection{\texorpdfstring{extract\+Class\+I\+Ds()}{extractClassIDs()}}
+{\footnotesize\ttfamily void Mask\+R\+C\+N\+N\+::extract\+Class\+I\+Ds (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$ \&}]{result }\end{DoxyParamCaption})}
+
+Extracts mask class identification number from maskrcnn-\/benchmark instance 
+\begin{DoxyParams}{Parameters}
+{\em result} & A vector of masks label Id \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMaskRCNN_af7c4acde0601ceb535d1ab7d79cf5825}\label{classMaskRCNN_af7c4acde0601ceb535d1ab7d79cf5825}} 
+\index{Mask\+R\+C\+NN@{Mask\+R\+C\+NN}!extract\+Class\+Scores@{extract\+Class\+Scores}}
+\index{extract\+Class\+Scores@{extract\+Class\+Scores}!Mask\+R\+C\+NN@{Mask\+R\+C\+NN}}
+\subsubsection{\texorpdfstring{extract\+Class\+Scores()}{extractClassScores()}}
+{\footnotesize\ttfamily void Mask\+R\+C\+N\+N\+::extract\+Class\+Scores (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$ \&}]{result }\end{DoxyParamCaption})}
+
+Extracts mask classification score from maskrcnn-\/benchmark instance 
+\begin{DoxyParams}{Parameters}
+{\em result} & A vector of masks class score \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMaskRCNN_a3645133094358fbe319b4ae6015d662a}\label{classMaskRCNN_a3645133094358fbe319b4ae6015d662a}} 
+\index{Mask\+R\+C\+NN@{Mask\+R\+C\+NN}!extract\+Image@{extract\+Image}}
+\index{extract\+Image@{extract\+Image}!Mask\+R\+C\+NN@{Mask\+R\+C\+NN}}
+\subsubsection{\texorpdfstring{extract\+Image()}{extractImage()}}
+{\footnotesize\ttfamily void Mask\+R\+C\+N\+N\+::extract\+Image (\begin{DoxyParamCaption}\item[{std\+::vector$<$ cv\+::\+Mat $>$ \&}]{result }\end{DoxyParamCaption})}
+
+Extracts binary mask images from maskrcnn-\/benchmark instance 
+\begin{DoxyParams}{Parameters}
+{\em result} & A vector of binary mask images \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMaskRCNN_ac053158f922a85807ba5bba9822848c7}\label{classMaskRCNN_ac053158f922a85807ba5bba9822848c7}} 
+\index{Mask\+R\+C\+NN@{Mask\+R\+C\+NN}!get\+Py\+Object@{get\+Py\+Object}}
+\index{get\+Py\+Object@{get\+Py\+Object}!Mask\+R\+C\+NN@{Mask\+R\+C\+NN}}
+\subsubsection{\texorpdfstring{get\+Py\+Object()}{getPyObject()}}
+{\footnotesize\ttfamily Py\+Object $\ast$ Mask\+R\+C\+N\+N\+::get\+Py\+Object (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+Returns a pointer to a Py\+Object. A Py\+Object can represent any Python object. \mbox{\Hypertarget{classMaskRCNN_a5663b7c0e5e9fd148802735bd7c3f368}\label{classMaskRCNN_a5663b7c0e5e9fd148802735bd7c3f368}} 
+\index{Mask\+R\+C\+NN@{Mask\+R\+C\+NN}!Run@{Run}}
+\index{Run@{Run}!Mask\+R\+C\+NN@{Mask\+R\+C\+NN}}
+\subsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily void Mask\+R\+C\+N\+N\+::\+Run (\begin{DoxyParamCaption}\item[{cv\+::\+Mat}]{Image,  }\item[{std\+::vector$<$ cv\+::\+Rect $>$ \&}]{Rec,  }\item[{std\+::vector$<$ cv\+::\+Mat $>$ \&}]{Mask,  }\item[{std\+::vector$<$ int $>$ \&}]{Id,  }\item[{std\+::vector$<$ double $>$ \&}]{score }\end{DoxyParamCaption})}
+
+Extracts mask class identification number from maskrcnn-\/benchmark instance 
+\begin{DoxyParams}{Parameters}
+{\em Image} & input R\+GB image \\
+\hline
+{\em Rec} & vector of bounding box coordinates (one per object instance) \\
+\hline
+{\em Mask} & vector of binary mask images (one per object instance) \\
+\hline
+{\em Id} & vector of label Ids (one per object instance) \\
+\hline
+{\em score} & vector of masks score (one per object instance) \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mrt/\+Dev/maskrcnn\+\_\+slam\+\_\+b/include/Mask\+R\+C\+N\+N.\+hpp\item 
+/home/mrt/\+Dev/maskrcnn\+\_\+slam\+\_\+b/src/Mask\+R\+C\+N\+N.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,85 @@
+\hypertarget{classInventory}{}\section{Inventory Class Reference}
+\label{classInventory}\index{Inventory@{Inventory}}
+
+
+An inventory of all detected and classified map objects.  
+
+
+
+
+{\ttfamily \#include $<$Inventory.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classInventory_a10485613fc8bfb32ee564d9b5110f8fb}{Inventory} ()
+\item 
+void \hyperlink{classInventory_a3622ba6ef9cd884344c055bea63aa02f}{Add\+Object} (\hyperlink{classObject}{Object} $\ast$O)
+\item 
+\hyperlink{classObject}{Object} $\ast$ \hyperlink{classInventory_ab7bfc70ba945972f1bb1bb440b0e6d5c}{Get\+Object} (int idx)
+\item 
+vector$<$ \hyperlink{classObject}{Object} $\ast$ $>$ \hyperlink{classInventory_a239cc8d4e9716eed4193c06421e483c2}{Get\+All\+Objects} ()
+\item 
+\mbox{\Hypertarget{classInventory_ae1c69f575440659a525115ece8c27fe1}\label{classInventory_ae1c69f575440659a525115ece8c27fe1}} 
+void {\bfseries Add\+Key\+Frame} (O\+R\+B\+\_\+\+S\+L\+A\+M2\+::\+Key\+Frame $\ast$KF)
+\item 
+\mbox{\Hypertarget{classInventory_af61cb5f05ee5163f090a6b884cdb7fad}\label{classInventory_af61cb5f05ee5163f090a6b884cdb7fad}} 
+vector$<$ O\+R\+B\+\_\+\+S\+L\+A\+M2\+::\+Key\+Frame $\ast$ $>$ {\bfseries Get\+All\+Key\+Frames} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An inventory of all detected and classified map objects. 
+
+\begin{DoxyAuthor}{Author}
+Tariq Abuhashim 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+August 2019 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classInventory_a10485613fc8bfb32ee564d9b5110f8fb}\label{classInventory_a10485613fc8bfb32ee564d9b5110f8fb}} 
+\index{Inventory@{Inventory}!Inventory@{Inventory}}
+\index{Inventory@{Inventory}!Inventory@{Inventory}}
+\subsubsection{\texorpdfstring{Inventory()}{Inventory()}}
+{\footnotesize\ttfamily Inventory\+::\+Inventory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classInventory_a3622ba6ef9cd884344c055bea63aa02f}\label{classInventory_a3622ba6ef9cd884344c055bea63aa02f}} 
+\index{Inventory@{Inventory}!Add\+Object@{Add\+Object}}
+\index{Add\+Object@{Add\+Object}!Inventory@{Inventory}}
+\subsubsection{\texorpdfstring{Add\+Object()}{AddObject()}}
+{\footnotesize\ttfamily void Inventory\+::\+Add\+Object (\begin{DoxyParamCaption}\item[{\hyperlink{classObject}{Object} $\ast$}]{O }\end{DoxyParamCaption})}
+
+Add a new detected and classified object into the inventory 
+\begin{DoxyParams}{Parameters}
+{\em MO} & the current Map\+Object to be added to inventory \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classInventory_a239cc8d4e9716eed4193c06421e483c2}\label{classInventory_a239cc8d4e9716eed4193c06421e483c2}} 
+\index{Inventory@{Inventory}!Get\+All\+Objects@{Get\+All\+Objects}}
+\index{Get\+All\+Objects@{Get\+All\+Objects}!Inventory@{Inventory}}
+\subsubsection{\texorpdfstring{Get\+All\+Objects()}{GetAllObjects()}}
+{\footnotesize\ttfamily vector$<$ \hyperlink{classObject}{Object} $\ast$ $>$ Inventory\+::\+Get\+All\+Objects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Return a vector of all objects in the inventory \mbox{\Hypertarget{classInventory_ab7bfc70ba945972f1bb1bb440b0e6d5c}\label{classInventory_ab7bfc70ba945972f1bb1bb440b0e6d5c}} 
+\index{Inventory@{Inventory}!Get\+Object@{Get\+Object}}
+\index{Get\+Object@{Get\+Object}!Inventory@{Inventory}}
+\subsubsection{\texorpdfstring{Get\+Object()}{GetObject()}}
+{\footnotesize\ttfamily \hyperlink{classObject}{Object} $\ast$ Inventory\+::\+Get\+Object (\begin{DoxyParamCaption}\item[{int}]{idx }\end{DoxyParamCaption})}
+
+Return a pointer to the object with index (idx) 
+\begin{DoxyParams}{Parameters}
+{\em idx} & index to object. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mrt/\+Dev/maskrcnn\+\_\+slam\+\_\+b/include/Inventory.\+hpp\item 
+/home/mrt/\+Dev/maskrcnn\+\_\+slam\+\_\+b/src/Inventory.\+cpp\end{DoxyCompactItemize}

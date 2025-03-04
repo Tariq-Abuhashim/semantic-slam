@@ -1,0 +1,73 @@
+\hypertarget{classTSDF}{}\section{T\+S\+DF Class Reference}
+\label{classTSDF}\index{T\+S\+DF@{T\+S\+DF}}
+
+
+C\+U\+DA kernel function to integrate a \hyperlink{classTSDF}{T\+S\+DF} voxel volume given depth images.  
+
+
+
+
+{\ttfamily \#include $<$tsdf.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTSDF_ae5f83a336be140ee825d459990e54367}{T\+S\+DF} (int h, int w, int id, std\+::vector$<$ float $>$ base2world\+\_\+vec, std\+::vector$<$ float $>$ origin)
+\item 
+void \hyperlink{classTSDF_a6ab9e630dd5285603b8a8b0e7633fd88}{Integrate} (float $\ast$depth\+\_\+im, std\+::vector$<$ float $>$ cam2world\+\_\+vec)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTSDF_a3a2846e89cfa45141d105ade3545f629}\label{classTSDF_a3a2846e89cfa45141d105ade3545f629}} 
+float $\ast$ \hyperlink{classTSDF_a3a2846e89cfa45141d105ade3545f629}{voxel\+\_\+grid\+\_\+\+T\+S\+DF}
+\begin{DoxyCompactList}\small\item\em pointer to a \hyperlink{classTSDF}{T\+S\+DF} voxel grid \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTSDF_aa35557cf4059c58aeed3bc92c181dc5f}\label{classTSDF_aa35557cf4059c58aeed3bc92c181dc5f}} 
+float $\ast$ \hyperlink{classTSDF_aa35557cf4059c58aeed3bc92c181dc5f}{voxel\+\_\+grid\+\_\+weight}
+\begin{DoxyCompactList}\small\item\em pointer to a \hyperlink{classTSDF}{T\+S\+DF} voxel grid weights \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+C\+U\+DA kernel function to integrate a \hyperlink{classTSDF}{T\+S\+DF} voxel volume given depth images. 
+
+\begin{DoxyAuthor}{Author}
+Tariq Abuhashim (modified from Andy Zeng, Princeton University, 2016) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+August 2019 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTSDF_ae5f83a336be140ee825d459990e54367}\label{classTSDF_ae5f83a336be140ee825d459990e54367}} 
+\index{T\+S\+DF@{T\+S\+DF}!T\+S\+DF@{T\+S\+DF}}
+\index{T\+S\+DF@{T\+S\+DF}!T\+S\+DF@{T\+S\+DF}}
+\subsubsection{\texorpdfstring{T\+S\+D\+F()}{TSDF()}}
+{\footnotesize\ttfamily T\+S\+D\+F\+::\+T\+S\+DF (\begin{DoxyParamCaption}\item[{int}]{h,  }\item[{int}]{w,  }\item[{int}]{id,  }\item[{std\+::vector$<$ float $>$}]{base2world\+\_\+vec,  }\item[{std\+::vector$<$ float $>$}]{origin }\end{DoxyParamCaption})}
+
+\hyperlink{classObject}{Object} \hyperlink{classTSDF}{T\+S\+DF} constructor 
+\begin{DoxyParams}{Parameters}
+{\em h} & depth image height \\
+\hline
+{\em w} & depth image width \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classTSDF_a6ab9e630dd5285603b8a8b0e7633fd88}\label{classTSDF_a6ab9e630dd5285603b8a8b0e7633fd88}} 
+\index{T\+S\+DF@{T\+S\+DF}!Integrate@{Integrate}}
+\index{Integrate@{Integrate}!T\+S\+DF@{T\+S\+DF}}
+\subsubsection{\texorpdfstring{Integrate()}{Integrate()}}
+{\footnotesize\ttfamily void T\+S\+D\+F\+::\+Integrate (\begin{DoxyParamCaption}\item[{float $\ast$}]{depth\+\_\+im,  }\item[{std\+::vector$<$ float $>$}]{cam2world\+\_\+vec }\end{DoxyParamCaption})}
+
+Incrementally, this function can be called to integrate a depth image into an object \hyperlink{classTSDF}{T\+S\+DF} 
+\begin{DoxyParams}{Parameters}
+{\em depth\+\_\+im} & pointer to depth image \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/mrt/\+Dev/maskrcnn\+\_\+slam\+\_\+b/include/tsdf.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,320 @@
+\hypertarget{classEngine}{}\section{Engine Class Reference}
+\label{classEngine}\index{Engine@{Engine}}
+
+
+An engine implementation to run object instance segmentation using maskrcnn-\/benchmark and O\+R\+B\+S\+L\+A\+M2.  
+
+
+
+
+{\ttfamily \#include $<$Engine.\+hpp$>$}
+
+
+
+Collaboration diagram for Engine\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEngine__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classEngine_ab3818182cd3d2b3a788ac04d743cf6f4}{Engine} (std\+::unordered\+\_\+map$<$ int, std\+::string $>$ categories, std\+::string)
+\item 
+\hyperlink{classEngine_a8ef7030a089ecb30bbfcb9e43094717a}{$\sim$\+Engine} ()
+\item 
+void \hyperlink{classEngine_a0e1fdb5ff8c992b1795eff03e2551708}{Run} (cv\+::\+Mat im\+R\+GB, cv\+::\+Mat imD, Key\+Frame $\ast$KF)
+\item 
+\hyperlink{classObject}{Object} $\ast$ \hyperlink{classEngine_ad6d6151754fc9b77c75ce041f4653007}{Track\+Object\+Points} (Contour mask\+Contour, const std\+::string label, double score, cv\+::\+Mat im\+Depth)
+\item 
+\hyperlink{classObject}{Object} $\ast$ \hyperlink{classEngine_a76d6ccc8e7dd30849fbcb039cd8cf5a6}{Track\+Object\+Contours} (Contour mask\+Contour, const std\+::string label, double score, cv\+::\+Mat im\+Depth)
+\item 
+cv\+::\+Point \hyperlink{classEngine_ab7feb6f45507d808379e9c4ba6cae90b}{Project\+Into\+Current\+KF} (\hyperlink{classObjectPoint}{Object\+Point} $\ast$MP)
+\item 
+cv\+::\+Mat \hyperlink{classEngine_a381792d9c8cf59c365aa9ef5ff1841fb}{Compute\+Fundamental} (Key\+Frame $\ast$K\+F1, Key\+Frame $\ast$K\+F2)
+\item 
+cv\+::\+Mat \hyperlink{classEngine_ade7b2b448a71642155d74932139c26d7}{Get\+Skew\+Symmetric\+Matrix} (const cv\+::\+Mat \&v)
+\item 
+float \hyperlink{classEngine_a21c2286837892a045674c6e9c2aaa0b8}{shortest\+\_\+distance} (float u, float v, float a, float b, float c)
+\item 
+void \hyperlink{classEngine_a45c5502ceecdd852f9417ed0d7c73648}{display} (\hyperlink{classObject}{Object} $\ast$O, cv\+::\+Mat im\+R\+GB, Contour mask\+Contour, cv\+::\+Rect bbox, std\+::vector$<$ cv\+::\+Vec4i $>$ hierarchy, cv\+::\+Scalar color)
+\item 
+\mbox{\Hypertarget{classEngine_adbb2bcd0cf0e2f084226f38477a871a9}\label{classEngine_adbb2bcd0cf0e2f084226f38477a871a9}} 
+bool {\bfseries Is\+In\+Current\+KF} (float range, cv\+::\+Point cvpoint, int margin)
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEngine_aabf30721fe5b9d5a0596aceddf4fc8ad}\label{classEngine_aabf30721fe5b9d5a0596aceddf4fc8ad}} 
+typedef std\+::chrono\+::monotonic\+\_\+clock\+::time\+\_\+point {\bfseries timer}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEngine_a862870af01354ec1327bae82074e836f}\label{classEngine_a862870af01354ec1327bae82074e836f}} 
+void {\bfseries tick} ()
+\item 
+\mbox{\Hypertarget{classEngine_a09c7704a2bef626ce6c80e504a178bf9}\label{classEngine_a09c7704a2bef626ce6c80e504a178bf9}} 
+double {\bfseries tock} ()
+\item 
+\mbox{\Hypertarget{classEngine_a8236c8dbd88d7398fa135e9d660217a2}\label{classEngine_a8236c8dbd88d7398fa135e9d660217a2}} 
+{\footnotesize template$<$class T $>$ }\\T {\bfseries tick} ()
+\item 
+\mbox{\Hypertarget{classEngine_a2823156001f3e2bbdbcbdb4d29322272}\label{classEngine_a2823156001f3e2bbdbcbdb4d29322272}} 
+{\footnotesize template$<$class T $>$ }\\double {\bfseries tock} (T t1)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEngine_a32fcfaf08165cdfc81d39e8dc8d71e6f}\label{classEngine_a32fcfaf08165cdfc81d39e8dc8d71e6f}} 
+int {\bfseries m\+Sensor}
+\item 
+\mbox{\Hypertarget{classEngine_a7c6071c21007bd703040b035f4262da8}\label{classEngine_a7c6071c21007bd703040b035f4262da8}} 
+float \hyperlink{classEngine_a7c6071c21007bd703040b035f4262da8}{mn\+Min\+Depth}
+\begin{DoxyCompactList}\small\item\em Minimum perceived depth. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEngine_a639e031e36ea33902eee3bf4f2c4600f}\label{classEngine_a639e031e36ea33902eee3bf4f2c4600f}} 
+float \hyperlink{classEngine_a639e031e36ea33902eee3bf4f2c4600f}{mn\+Max\+Depth}
+\begin{DoxyCompactList}\small\item\em Maximum perceived depth. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEngine_a1b1b9bc3ce76e792ae67818a36bd01bd}\label{classEngine_a1b1b9bc3ce76e792ae67818a36bd01bd}} 
+float \hyperlink{classEngine_a1b1b9bc3ce76e792ae67818a36bd01bd}{mn\+Dist}
+\begin{DoxyCompactList}\small\item\em Threshold for point-\/to-\/polygon test. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEngine_a35ddf071177f32315a8e5d534005b907}\label{classEngine_a35ddf071177f32315a8e5d534005b907}} 
+float {\bfseries m\+Min\+Area}
+\item 
+\mbox{\Hypertarget{classEngine_a470e699fd14551987d1a14e8227462e2}\label{classEngine_a470e699fd14551987d1a14e8227462e2}} 
+float {\bfseries m\+Max\+Area}
+\item 
+\mbox{\Hypertarget{classEngine_a94359672a475890b50acc354ef174417}\label{classEngine_a94359672a475890b50acc354ef174417}} 
+float {\bfseries m\+Overlap}
+\item 
+\mbox{\Hypertarget{classEngine_a30a62cf18615cc5bddad798ffcc3e12a}\label{classEngine_a30a62cf18615cc5bddad798ffcc3e12a}} 
+int {\bfseries m\+Min\+Point\+Count}
+\item 
+\mbox{\Hypertarget{classEngine_a30d46eb3926affc633a70e49069d111f}\label{classEngine_a30d46eb3926affc633a70e49069d111f}} 
+float {\bfseries m\+Prob\+Thd}
+\item 
+\mbox{\Hypertarget{classEngine_a915a94d5480ef2870041b5ff5f82ea0e}\label{classEngine_a915a94d5480ef2870041b5ff5f82ea0e}} 
+float {\bfseries m\+Res}
+\item 
+cv\+::\+Mat \hyperlink{classEngine_a39ebc85b2ec8b863a9a525a4fa4689aa}{K}
+\begin{DoxyCompactList}\small\item\em Camera intrinsic parameters (T\+UM) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEngine_a9bddf06ba7cf3410c6b49fc865f1201c}\label{classEngine_a9bddf06ba7cf3410c6b49fc865f1201c}} 
+cv\+::\+Mat \hyperlink{classEngine_a9bddf06ba7cf3410c6b49fc865f1201c}{Dist\+Coef}
+\begin{DoxyCompactList}\small\item\em Camera lense distortion parameters. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEngine_a08215fba7b1d3b3e9347d40590b5b54b}\label{classEngine_a08215fba7b1d3b3e9347d40590b5b54b}} 
+int {\bfseries m\+Width}
+\item 
+\mbox{\Hypertarget{classEngine_a76d3938e3e8b6325ebae501696631d06}\label{classEngine_a76d3938e3e8b6325ebae501696631d06}} 
+int {\bfseries m\+Height}
+\item 
+\mbox{\Hypertarget{classEngine_ab05ac5f81adf467caf2d9fb49113d704}\label{classEngine_ab05ac5f81adf467caf2d9fb49113d704}} 
+Key\+Frame $\ast$ {\bfseries mp\+Current\+KF}
+\item 
+\mbox{\Hypertarget{classEngine_ac4c620f056b94de7faf0dfc13010d189}\label{classEngine_ac4c620f056b94de7faf0dfc13010d189}} 
+\hyperlink{classMaskRCNN}{Mask\+R\+C\+NN} $\ast$ \hyperlink{classEngine_ac4c620f056b94de7faf0dfc13010d189}{mp\+Mask\+R\+C\+NN}
+\begin{DoxyCompactList}\small\item\em A pointer to maskrcnn object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEngine_a94c02a735a6d30121bff171cbf96e7e1}\label{classEngine_a94c02a735a6d30121bff171cbf96e7e1}} 
+\hyperlink{classDoN}{DoN} $\ast$ \hyperlink{classEngine_a94c02a735a6d30121bff171cbf96e7e1}{mp\+DoN}
+\begin{DoxyCompactList}\small\item\em A pointer to \hyperlink{classDoN}{DoN} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEngine_a1f29333d26ca0799ece0aad9a121108d}\label{classEngine_a1f29333d26ca0799ece0aad9a121108d}} 
+std\+::unordered\+\_\+map$<$ int, std\+::string $>$ \hyperlink{classEngine_a1f29333d26ca0799ece0aad9a121108d}{mm\+Categories}
+\begin{DoxyCompactList}\small\item\em Labelled object categories. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEngine_ab1a7b510fc78ce3e41afcce0492c8065}\label{classEngine_ab1a7b510fc78ce3e41afcce0492c8065}} 
+\hyperlink{classInventory}{Inventory} $\ast$ \hyperlink{classEngine_ab1a7b510fc78ce3e41afcce0492c8065}{mp\+Inventory}
+\begin{DoxyCompactList}\small\item\em A pointer to \hyperlink{classInventory}{Inventory}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEngine_a344b73834a2105c834df216935af06e9}\label{classEngine_a344b73834a2105c834df216935af06e9}} 
+\hyperlink{classInstanceViewer}{Instance\+Viewer} $\ast$ \hyperlink{classEngine_a344b73834a2105c834df216935af06e9}{mp\+Viewer}
+\begin{DoxyCompactList}\small\item\em A pointer to \hyperlink{classObject}{Object} viewer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEngine_ae0baa7948abc47c2a198bd70eacea10c}\label{classEngine_ae0baa7948abc47c2a198bd70eacea10c}} 
+\hyperlink{classObjectDrawer}{Object\+Drawer} $\ast$ \hyperlink{classEngine_ae0baa7948abc47c2a198bd70eacea10c}{mp\+Object\+Drawer}
+\begin{DoxyCompactList}\small\item\em A pointer to \hyperlink{classObject}{Object} drawer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEngine_ac18e97590b413588ec2e0d91b06f9f8c}\label{classEngine_ac18e97590b413588ec2e0d91b06f9f8c}} 
+std\+::thread $\ast$ \hyperlink{classEngine_ac18e97590b413588ec2e0d91b06f9f8c}{mpt\+Viewer}
+\begin{DoxyCompactList}\small\item\em A pointer to \hyperlink{classObject}{Object} viewer thread. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEngine_ad6aea740916785e00aa7f0bc7e73dbab}\label{classEngine_ad6aea740916785e00aa7f0bc7e73dbab}} 
+timer {\bfseries mtimer}
+\item 
+\mbox{\Hypertarget{classEngine_ae9d68b104f8ed664e4dfb058dd360e7b}\label{classEngine_ae9d68b104f8ed664e4dfb058dd360e7b}} 
+bool {\bfseries time\+Is\+Ticked} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An engine implementation to run object instance segmentation using maskrcnn-\/benchmark and O\+R\+B\+S\+L\+A\+M2. 
+
+\begin{DoxyAuthor}{Author}
+Tariq Abuhashim 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+August 2019 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEngine_ab3818182cd3d2b3a788ac04d743cf6f4}\label{classEngine_ab3818182cd3d2b3a788ac04d743cf6f4}} 
+\index{Engine@{Engine}!Engine@{Engine}}
+\index{Engine@{Engine}!Engine@{Engine}}
+\subsubsection{\texorpdfstring{Engine()}{Engine()}}
+{\footnotesize\ttfamily Engine\+::\+Engine (\begin{DoxyParamCaption}\item[{std\+::unordered\+\_\+map$<$ int, std\+::string $>$}]{categories,  }\item[{std\+::string}]{ }\end{DoxyParamCaption})}
+
+Constructor, Initialises Mask-\/\+R\+C\+NN. 
+\begin{DoxyParams}{Parameters}
+{\em categories} & a map of integers and object class labels of type unordered\+\_\+map$<$int,string$>$ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEngine_a8ef7030a089ecb30bbfcb9e43094717a}\label{classEngine_a8ef7030a089ecb30bbfcb9e43094717a}} 
+\index{Engine@{Engine}!````~Engine@{$\sim$\+Engine}}
+\index{````~Engine@{$\sim$\+Engine}!Engine@{Engine}}
+\subsubsection{\texorpdfstring{$\sim$\+Engine()}{~Engine()}}
+{\footnotesize\ttfamily Engine\+::$\sim$\+Engine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default destructor, Deletes Mask-\/\+R\+C\+NN. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classEngine_a381792d9c8cf59c365aa9ef5ff1841fb}\label{classEngine_a381792d9c8cf59c365aa9ef5ff1841fb}} 
+\index{Engine@{Engine}!Compute\+Fundamental@{Compute\+Fundamental}}
+\index{Compute\+Fundamental@{Compute\+Fundamental}!Engine@{Engine}}
+\subsubsection{\texorpdfstring{Compute\+Fundamental()}{ComputeFundamental()}}
+{\footnotesize\ttfamily cv\+::\+Mat Engine\+::\+Compute\+Fundamental (\begin{DoxyParamCaption}\item[{Key\+Frame $\ast$}]{K\+F1,  }\item[{Key\+Frame $\ast$}]{K\+F2 }\end{DoxyParamCaption})}
+
+Computes the fundamental matrix between two O\+R\+B\+S\+L\+A\+M2 Key\+Frames (projects a 2D point in K\+F1 to a line in K\+F2) 
+\begin{DoxyParams}{Parameters}
+{\em K\+F1} & a pointer to the first (reference) Key\+Frame. \\
+\hline
+{\em K\+F2} & a pointer to the second Key\+Frame. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEngine_a45c5502ceecdd852f9417ed0d7c73648}\label{classEngine_a45c5502ceecdd852f9417ed0d7c73648}} 
+\index{Engine@{Engine}!display@{display}}
+\index{display@{display}!Engine@{Engine}}
+\subsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void Engine\+::display (\begin{DoxyParamCaption}\item[{\hyperlink{classObject}{Object} $\ast$}]{O,  }\item[{cv\+::\+Mat}]{im\+R\+GB,  }\item[{Contour}]{mask\+Contour,  }\item[{cv\+::\+Rect}]{bbox,  }\item[{std\+::vector$<$ cv\+::\+Vec4i $>$}]{hierarchy,  }\item[{cv\+::\+Scalar}]{color }\end{DoxyParamCaption})}
+
+Displays object measurements in 2D on the image. This includes object contours and 3D points projections in the current Key\+Frame 
+\begin{DoxyParams}{Parameters}
+{\em O} & a pointer to the object \\
+\hline
+{\em im\+R\+GB} & the current R\+GB image \\
+\hline
+{\em KF} & the current Key\+Frame \\
+\hline
+{\em mask\+Contour} & a vector of visible object contours in the current Key\+Frame \\
+\hline
+{\em bbox} & an Open\+CV rectangular coordinates of the current object bounding box \\
+\hline
+{\em hierarchy} & Open\+CV contours hierarchy \\
+\hline
+{\em color} & display color for both, contours and 2D Object\+Points \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEngine_ade7b2b448a71642155d74932139c26d7}\label{classEngine_ade7b2b448a71642155d74932139c26d7}} 
+\index{Engine@{Engine}!Get\+Skew\+Symmetric\+Matrix@{Get\+Skew\+Symmetric\+Matrix}}
+\index{Get\+Skew\+Symmetric\+Matrix@{Get\+Skew\+Symmetric\+Matrix}!Engine@{Engine}}
+\subsubsection{\texorpdfstring{Get\+Skew\+Symmetric\+Matrix()}{GetSkewSymmetricMatrix()}}
+{\footnotesize\ttfamily cv\+::\+Mat Engine\+::\+Get\+Skew\+Symmetric\+Matrix (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{v }\end{DoxyParamCaption})}
+
+Generates skew-\/symmetric square matrix (3x3) from an input vector 
+\begin{DoxyParams}{Parameters}
+{\em v} & input vector with dimensions (3x1) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEngine_ab7feb6f45507d808379e9c4ba6cae90b}\label{classEngine_ab7feb6f45507d808379e9c4ba6cae90b}} 
+\index{Engine@{Engine}!Project\+Into\+Current\+KF@{Project\+Into\+Current\+KF}}
+\index{Project\+Into\+Current\+KF@{Project\+Into\+Current\+KF}!Engine@{Engine}}
+\subsubsection{\texorpdfstring{Project\+Into\+Current\+K\+F()}{ProjectIntoCurrentKF()}}
+{\footnotesize\ttfamily cv\+::\+Point Engine\+::\+Project\+Into\+Current\+KF (\begin{DoxyParamCaption}\item[{\hyperlink{classObjectPoint}{Object\+Point} $\ast$}]{MP }\end{DoxyParamCaption})}
+
+Projects a map point from 3D into 2D image frame 
+\begin{DoxyParams}{Parameters}
+{\em MP} & a pointer to the current \hyperlink{classObjectPoint}{Object\+Point}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEngine_a0e1fdb5ff8c992b1795eff03e2551708}\label{classEngine_a0e1fdb5ff8c992b1795eff03e2551708}} 
+\index{Engine@{Engine}!Run@{Run}}
+\index{Run@{Run}!Engine@{Engine}}
+\subsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily void Engine\+::\+Run (\begin{DoxyParamCaption}\item[{cv\+::\+Mat}]{im\+R\+GB,  }\item[{cv\+::\+Mat}]{imD,  }\item[{Key\+Frame $\ast$}]{KF }\end{DoxyParamCaption})}
+
+Main function to run the object instance segmentation process 
+\begin{DoxyParams}{Parameters}
+{\em im\+R\+GB} & is the current Key\+Frame R\+GB image \\
+\hline
+{\em imD} & is the current Key\+Frame depth image \\
+\hline
+{\em KF} & pointer to the current Key\+Frame \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEngine_a21c2286837892a045674c6e9c2aaa0b8}\label{classEngine_a21c2286837892a045674c6e9c2aaa0b8}} 
+\index{Engine@{Engine}!shortest\+\_\+distance@{shortest\+\_\+distance}}
+\index{shortest\+\_\+distance@{shortest\+\_\+distance}!Engine@{Engine}}
+\subsubsection{\texorpdfstring{shortest\+\_\+distance()}{shortest\_distance()}}
+{\footnotesize\ttfamily float Engine\+::shortest\+\_\+distance (\begin{DoxyParamCaption}\item[{float}]{u,  }\item[{float}]{v,  }\item[{float}]{a,  }\item[{float}]{b,  }\item[{float}]{c }\end{DoxyParamCaption})}
+
+Calculates the shorted distance between a 2D point and a 2D line ( a$\ast$x + b$\ast$y + c = 0 ) 
+\begin{DoxyParams}{Parameters}
+{\em u} & horizontal coordinate of the 2D point in the image \\
+\hline
+{\em v} & vertical coordinate of the 2D point in the image \\
+\hline
+{\em a} & first line coefficient (first component of the normal vector to the line) \\
+\hline
+{\em b} & second line coefficient (second component of the normal vector to the line) \\
+\hline
+{\em c} & third line coefficient \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEngine_a76d6ccc8e7dd30849fbcb039cd8cf5a6}\label{classEngine_a76d6ccc8e7dd30849fbcb039cd8cf5a6}} 
+\index{Engine@{Engine}!Track\+Object\+Contours@{Track\+Object\+Contours}}
+\index{Track\+Object\+Contours@{Track\+Object\+Contours}!Engine@{Engine}}
+\subsubsection{\texorpdfstring{Track\+Object\+Contours()}{TrackObjectContours()}}
+{\footnotesize\ttfamily \hyperlink{classObject}{Object} $\ast$ Engine\+::\+Track\+Object\+Contours (\begin{DoxyParamCaption}\item[{Contour}]{mask\+Contour,  }\item[{const std\+::string}]{label,  }\item[{double}]{score,  }\item[{cv\+::\+Mat}]{im\+Depth }\end{DoxyParamCaption})}
+
+Implements object instance tracking in images by tracking its contours and using epipolar geometry 
+\begin{DoxyParams}{Parameters}
+{\em mask\+Contour} & a vector of object contours extracted using Open\+CV. \\
+\hline
+{\em label} & the classification label of the detection object using \hyperlink{classMaskRCNN}{Mask\+R\+C\+NN}. \\
+\hline
+{\em score} & the classification score of the detection object using \hyperlink{classMaskRCNN}{Mask\+R\+C\+NN}. \\
+\hline
+{\em im\+Depth} & the current depth image. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEngine_ad6d6151754fc9b77c75ce041f4653007}\label{classEngine_ad6d6151754fc9b77c75ce041f4653007}} 
+\index{Engine@{Engine}!Track\+Object\+Points@{Track\+Object\+Points}}
+\index{Track\+Object\+Points@{Track\+Object\+Points}!Engine@{Engine}}
+\subsubsection{\texorpdfstring{Track\+Object\+Points()}{TrackObjectPoints()}}
+{\footnotesize\ttfamily \hyperlink{classObject}{Object} $\ast$ Engine\+::\+Track\+Object\+Points (\begin{DoxyParamCaption}\item[{Contour}]{mask\+Contour,  }\item[{const std\+::string}]{label,  }\item[{double}]{score,  }\item[{cv\+::\+Mat}]{im\+Depth }\end{DoxyParamCaption})}
+
+Implements object instance tracking in images by reprojecting map points into the current image frame 
+\begin{DoxyParams}{Parameters}
+{\em mask\+Contour} & a vector of object contours extracted using Open\+CV. \\
+\hline
+{\em label} & the classification label of the detection object using \hyperlink{classMaskRCNN}{Mask\+R\+C\+NN}. \\
+\hline
+{\em score} & the classification score of the detection object using \hyperlink{classMaskRCNN}{Mask\+R\+C\+NN}. \\
+\hline
+{\em im\+Depth} & the current depth image. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classEngine_a39ebc85b2ec8b863a9a525a4fa4689aa}\label{classEngine_a39ebc85b2ec8b863a9a525a4fa4689aa}} 
+\index{Engine@{Engine}!K@{K}}
+\index{K@{K}!Engine@{Engine}}
+\subsubsection{\texorpdfstring{K}{K}}
+{\footnotesize\ttfamily cv\+::\+Mat Engine\+::K\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Camera intrinsic parameters (T\+UM) 
+
+Camera intrinsic parameters 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mrt/\+Dev/maskrcnn\+\_\+slam\+\_\+b/include/Engine.\+hpp\item 
+/home/mrt/\+Dev/maskrcnn\+\_\+slam\+\_\+b/src/Engine.\+cpp\end{DoxyCompactItemize}

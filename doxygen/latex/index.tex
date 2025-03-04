@@ -1,0 +1,69 @@
+\hypertarget{index_intro_sec}{}\section{Introduction}\label{index_intro_sec}
+An off-\/line implementation of object instance segmentation and classification using Mask-\/\+R\+C\+NN and S\+L\+AM.~\newline
+ It is based on O\+R\+B\+S\+L\+A\+M2 and is using its Map, Map\+Point, and Key\+Frame classes.\hypertarget{index_install_sec}{}\section{Installation}\label{index_install_sec}
+Installation steps\+:
+\begin{DoxyItemize}
+\item Verify that your G\+PU works (I used C\+U\+D\+A9.\+0 and Cu\+D\+NN 7.\+0.\+5)\+:
+\begin{DoxyEnumerate}
+\item Run nvidia-\/smi in terminal
+\item Run a C\+U\+DA sample ./device\+Query and make sure it shows Test Passed.
+\end{DoxyEnumerate}
+\item Install Py\+Torch (using Python 3.\+5.\+2 and gcc/g++ 5.\+4.\+0)\+:
+\begin{DoxyEnumerate}
+\item sudo apt install python3-\/pip cython3
+\item pip3 install numpy
+\item pip3 install matplotlib==1.\+5.\+1
+\item pip3 install torch\+\_\+nightly -\/f \href{https://download.pytorch.org/whl/nightly/cu90/torch_nightly.html}{\tt https\+://download.\+pytorch.\+org/whl/nightly/cu90/torch\+\_\+nightly.\+html}
+\item pip3 install torchvision
+\end{DoxyEnumerate}
+\item Install Eigen, gflags, glog, googletest\+:
+\item Install Open\+GL\+: sudo apt-\/get install freeglut3 freeglut3-\/dev binutils-\/gold libglew-\/dev mesa-\/common-\/dev build-\/essential libglew1.\+5-\/dev libglm-\/dev
+\item Install Open\+CV (3.\+3.\+1)
+\begin{DoxyEnumerate}
+\item sudo apt install libgtk2.\+0-\/dev
+\item mkdir opencv\+\_\+build
+\item cd opencv\+\_\+build
+\item cmake -\/D C\+M\+A\+K\+E\+\_\+\+B\+U\+I\+L\+D\+\_\+\+T\+Y\+PE=R\+E\+L\+E\+A\+SE -\/D C\+M\+A\+K\+E\+\_\+\+I\+N\+S\+T\+A\+L\+L\+\_\+\+P\+R\+E\+F\+IX=/usr/local W\+I\+T\+H\+\_\+\+C\+U\+DA=ON E\+N\+A\+B\+L\+E\+\_\+\+F\+A\+S\+T\+\_\+\+M\+A\+TH=1 C\+U\+D\+A\+\_\+\+F\+A\+S\+T\+\_\+\+M\+A\+TH=1 W\+I\+T\+H\+\_\+\+C\+U\+B\+L\+AS=1 I\+N\+S\+T\+A\+L\+L\+\_\+\+P\+Y\+T\+H\+O\+N\+\_\+\+E\+X\+A\+M\+P\+L\+ES=ON I\+N\+S\+T\+A\+L\+L\+\_\+\+C\+\_\+\+E\+X\+A\+M\+P\+L\+ES=O\+FF O\+P\+E\+N\+C\+V\+\_\+\+E\+X\+T\+R\+A\+\_\+\+M\+O\+D\+U\+L\+E\+S\+\_\+\+P\+A\+TH=../opencv\+\_\+contrib/modules W\+I\+T\+H\+\_\+\+G\+TK=ON E\+N\+A\+B\+L\+E\+\_\+\+P\+R\+E\+C\+O\+M\+P\+I\+L\+E\+D\+\_\+\+H\+E\+A\+D\+E\+RS=O\+FF B\+U\+I\+L\+D\+\_\+\+E\+X\+A\+M\+P\+L\+ES=ON B\+U\+I\+L\+D\+\_\+\+T\+I\+FF=ON ../opencv/
+\item ccmake ../opencv/
+\item make -\/j4
+\item sudo make install
+\item sudo ldconfig
+\end{DoxyEnumerate}
+\item Install Pangolin
+\begin{DoxyEnumerate}
+\item sudo apt install doxygen graphviz doxygen-\/gui
+\item Download Pangolin
+\item cd Pangolin
+\item mkdir build
+\item cd build
+\item cmake ..
+\item sudo make install
+\end{DoxyEnumerate}
+\item Build Mask-\/\+R\+C\+NN S\+L\+AM (also includes building pycocotools, apex, maskrcnn-\/benchmark, and O\+R\+B\+S\+L\+A\+M2)
+\begin{DoxyEnumerate}
+\item cd maskrcnn\+\_\+slam\+\_\+b
+\item ./build.sh
+\end{DoxyEnumerate}
+\item Verify all good\+:
+\begin{DoxyEnumerate}
+\item Environment\+: Run ./test\+\_\+environment ~\newline
+ Expected output\+: Active G\+PU 0\+: Ge\+Force 930M With Internet Connection Environmental variables included\+:
+\begin{DoxyItemize}
+\item Found C\+U\+DA 9.\+0/bin
+\item Found C\+U\+DA 9.\+0/lib64
+\item Found cu\+D\+NN 7.\+0.\+5/lib64
+\item Found gcc 5.\+4.\+0
+\item Found g++ 5.\+4.\+0
+\item Found opencv 3.\+3.\+1
+\item Found Python 3.\+5.\+2 ~\newline
+ matplotlib 1.\+5.\+1 ~\newline
+ numpy 1.\+11.\+0 ~\newline
+ pillow 6.\+1.\+0 ~\newline
+ torch 1.\+1.\+0 ~\newline
+ torchvision 0.\+3.\+0 ~\newline
+ cv2 3.\+3.\+1-\/dev ~\newline
+
+\end{DoxyItemize}
+\item \hyperlink{classEngine}{Engine}\+: Run ./test\+\_\+engine in tests
+\end{DoxyEnumerate}
+\end{DoxyItemize}\hypertarget{index_examples_sec}{}\section{Run Examples}\label{index_examples_sec}

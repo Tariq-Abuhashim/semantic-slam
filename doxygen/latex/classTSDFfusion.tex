@@ -1,0 +1,74 @@
+\hypertarget{classTSDFfusion}{}\section{T\+S\+D\+Ffusion Class Reference}
+\label{classTSDFfusion}\index{T\+S\+D\+Ffusion@{T\+S\+D\+Ffusion}}
+
+
+An interface between T\+S\+D\+F-\/fusion-\/python in python and \hyperlink{classEngine}{Engine} in C++.  
+
+
+
+
+{\ttfamily \#include $<$T\+S\+D\+Ffusion.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTSDFfusion_ac8f00f9755ea367512343e0723d7b220}{T\+S\+D\+Ffusion} ()
+\item 
+\hyperlink{classTSDFfusion_afa9eb8698b5d6fea76a6e59f353251f4}{$\sim$\+T\+S\+D\+Ffusion} ()
+\item 
+void \hyperlink{classTSDFfusion_ac44b533ba8876f10aac2ee6309055687}{Integrate} (cv\+::\+Mat im\+R\+GB, cv\+::\+Mat imD)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An interface between T\+S\+D\+F-\/fusion-\/python in python and \hyperlink{classEngine}{Engine} in C++. 
+
+\begin{DoxyAuthor}{Author}
+Tariq Abuhashim 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+August 2019 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTSDFfusion_ac8f00f9755ea367512343e0723d7b220}\label{classTSDFfusion_ac8f00f9755ea367512343e0723d7b220}} 
+\index{T\+S\+D\+Ffusion@{T\+S\+D\+Ffusion}!T\+S\+D\+Ffusion@{T\+S\+D\+Ffusion}}
+\index{T\+S\+D\+Ffusion@{T\+S\+D\+Ffusion}!T\+S\+D\+Ffusion@{T\+S\+D\+Ffusion}}
+\subsubsection{\texorpdfstring{T\+S\+D\+Ffusion()}{TSDFfusion()}}
+{\footnotesize\ttfamily T\+S\+D\+Ffusion\+::\+T\+S\+D\+Ffusion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor \mbox{\Hypertarget{classTSDFfusion_afa9eb8698b5d6fea76a6e59f353251f4}\label{classTSDFfusion_afa9eb8698b5d6fea76a6e59f353251f4}} 
+\index{T\+S\+D\+Ffusion@{T\+S\+D\+Ffusion}!````~T\+S\+D\+Ffusion@{$\sim$\+T\+S\+D\+Ffusion}}
+\index{````~T\+S\+D\+Ffusion@{$\sim$\+T\+S\+D\+Ffusion}!T\+S\+D\+Ffusion@{T\+S\+D\+Ffusion}}
+\subsubsection{\texorpdfstring{$\sim$\+T\+S\+D\+Ffusion()}{~TSDFfusion()}}
+{\footnotesize\ttfamily T\+S\+D\+Ffusion\+::$\sim$\+T\+S\+D\+Ffusion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default destructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classTSDFfusion_ac44b533ba8876f10aac2ee6309055687}\label{classTSDFfusion_ac44b533ba8876f10aac2ee6309055687}} 
+\index{T\+S\+D\+Ffusion@{T\+S\+D\+Ffusion}!Integrate@{Integrate}}
+\index{Integrate@{Integrate}!T\+S\+D\+Ffusion@{T\+S\+D\+Ffusion}}
+\subsubsection{\texorpdfstring{Integrate()}{Integrate()}}
+{\footnotesize\ttfamily void T\+S\+D\+Ffusion\+::\+Integrate (\begin{DoxyParamCaption}\item[{cv\+::\+Mat}]{im\+R\+GB,  }\item[{cv\+::\+Mat}]{imD }\end{DoxyParamCaption})}
+
+Extracts mask class identification number from maskrcnn-\/benchmark instance 
+\begin{DoxyParams}{Parameters}
+{\em Image} & input R\+GB image \\
+\hline
+{\em Rec} & vector of bounding box coordinates (one per object instance) \\
+\hline
+{\em Mask} & vector of binary mask images (one per object instance) \\
+\hline
+{\em Id} & vector of label Ids (one per object instance) \\
+\hline
+{\em score} & vector of masks score (one per object instance) \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mrt/\+Dev/maskrcnn\+\_\+slam\+\_\+b/include/T\+S\+D\+Ffusion.\+hpp\item 
+/home/mrt/\+Dev/maskrcnn\+\_\+slam\+\_\+b/src/T\+S\+D\+Ffusion.\+cpp\end{DoxyCompactItemize}
